@@ -41,7 +41,7 @@ const StyledHeader = styled.div`
     h1 {
         font-weight: 600;
         font-size: 27px;
-        color: #DCDCE1;
+        color: #f0bb0c;
         position: relative;
     }
     h1:hover {
