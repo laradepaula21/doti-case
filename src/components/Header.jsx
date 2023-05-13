@@ -76,7 +76,7 @@ const StyledHeader = styled.div`
         display: flex;
         align-items: center;
         h2 {
-            color: #FFFFFF;
+            color: #ffffff;
             font-weight: 600;
             font-size: 27px;
             padding-right: 20px;
