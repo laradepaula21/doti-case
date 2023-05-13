@@ -30,7 +30,7 @@ const StyledHeader = styled.div`
     background-color: #121214;
     width: 100vw;
     height: 80px;
-    color: white;
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: space-around;
