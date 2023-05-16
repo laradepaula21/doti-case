@@ -19,10 +19,8 @@ export default function Post(props) {
     
 
 const StyledPost = styled.div`
-
     font-family: 'Poppins', sans-serif;
-    width: 30%;
-    min-width: 420px;
+    width: 420px;
     height: 250px;
     color: white;
     overflow: hidden;
@@ -33,7 +31,7 @@ const StyledPost = styled.div`
     padding: 8px 15px;
     font-size: 20px;
     position: relative;
-
+    margin-top: 20px;
     img {
         position: absolute;
         top: 0;

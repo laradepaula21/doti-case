@@ -53,19 +53,17 @@ export default function Blog() {
     <>
         <Header underline="blog"></Header>
         <StyledBlog>
-        <div>
-        <div className="newsLetter">
-
-            <h1>Blog da Rocketseat</h1>
-            <p>Junte-se a milhares de devs e acelere na direção dos seus objetivos. Transforme sua carreira em uma jornada de evolução contínua através das melhores tecnologias.</p>
-            <button>Inscreva-se em nossa newsletter</button>
-        </div>
+        <StyledNewsLetter>
+            <img src={Blog_banner} alt="Blog_banner"/>
             <div>
-            {
-                noticias
-            }
-        </div>
-        </div>
+                <h1>Blog da Rocketseat</h1>
+                <p>Junte-se a milhares de devs e acelere na direção dos seus objetivos. Transforme sua carreira em uma jornada de evolução contínua através das melhores tecnologias.</p>
+                <button>Inscreva-se em nossa newsletter</button>
+            </div>
+        </StyledNewsLetter>
+        <StyledNoticias>
+            {noticias}
+        </StyledNoticias>
         </StyledBlog>
 
     </>
@@ -74,36 +72,41 @@ export default function Blog() {
 
 
 const StyledBlog = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+`
 
-    display:flex; 
-    justify-content: space-around;
-
-    background:url(${Blog_banner}) no-repeat center 0px;
-    > div{
-    > div.newsLetter{
-        color: white;
+const StyledNewsLetter = styled.div`
+    display: flex;
+    justify-content: center;
+    img {
+        position: relative;
+        width: 100vw;
+    }
+    div {
+        height: 500px;
+        font-size: 20px;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        text-align: center;
-        width: 100%;
-        height: 500px;
-        font-size: 30px;
-        
-    h1 {
-        font-size: 30px;
+        position: absolute;
+        color: white;
+        h1 {
+            font-size: 30px;
+        }
+        button {
+            width: 20%;
+        }
     }
-    
+`
 
-    }
-
-    width: 60%;
-    max-width: 950px;
+const StyledNoticias = styled.div`
     display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-between;
-}
-
+    align-items: center;
 `
