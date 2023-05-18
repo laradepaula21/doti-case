@@ -77,17 +77,23 @@ const StyledBlog = styled.div`
     justify-content: space-between;
     align-items: center;
     width: 100vw;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+
+
 `
 
 const StyledNewsLetter = styled.div`
     display: flex;
     justify-content: center;
+    width: 100vw;
+    height: 30vw;
     img {
         position: relative;
-        width: 100vw;
+        width: 100%;
     }
     div {
-        height: 500px;
+        height: 30vw;
         font-size: 20px;
         display: flex;
         flex-direction: column;
@@ -95,18 +101,28 @@ const StyledNewsLetter = styled.div`
         align-items: center;
         position: absolute;
         color: white;
+
+        p {
+            max-width: 600px;
+            text-align: center;
+        }
         h1 {
-            font-size: 30px;
+            font-size: 50px;
+            font-weight: bold;
         }
         button {
-            width: 20%;
+            min-width: 250px;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 16px; 
+            cursor: pointer;
+            color: #333333;
         }
     }
 `
-
 const StyledNoticias = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    width: 60vw;
     justify-content: space-between;
-    align-items: center;
 `
