@@ -5,9 +5,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Poppins', sans-serif;
 }
 body {
-    background-color: #1A1A1D;
+    background-color: #000000;
     width: 100vw;
     height: 100%;
+    overflow-y: hidden;
 }
 `
 

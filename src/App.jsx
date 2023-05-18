@@ -2,17 +2,16 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Blog from './pages/Blog';
 import Products from './pages/Products';
-import Teste2 from './pages/Teste2';
+import SignUp from './pages/Sign/SignUpPage';
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home/>} />
+        <Route path="/" element={ <SignUp/>} />
+        <Route path="/home" element={<Home/>} />
         <Route path="/blog" element={<Blog/>} />
         <Route path="/produtos" element={<Products/>} />
-        <Route path="/teste" element={<Teste/>} />
-        <Route path="/2" element={<Teste2/>} />
       </Routes>
     </BrowserRouter>
   )
