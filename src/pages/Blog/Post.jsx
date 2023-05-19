@@ -20,7 +20,9 @@ export default function Post(props) {
 
 const StyledPost = styled.div`
     font-family: 'Poppins', sans-serif;
-    width: 420px;
+    width: 45%;
+    max-width: 465px;
+    min-width: 365px;
     height: 250px;
     color: white;
     overflow: hidden;
@@ -31,7 +33,6 @@ const StyledPost = styled.div`
     padding: 8px 15px;
     font-size: 20px;
     position: relative;
-    margin-top: 20px;
     img {
         position: absolute;
         top: 0;
@@ -51,5 +52,31 @@ const StyledPost = styled.div`
     }
     .data{
         font-size: 12px;
+    }
+
+    @media(max-width: 600px) {    
+    width: 100%;
+    height: 200px;
+    color: white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 5px  5px;
+    font-size: 12pt;
+
+    div{
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    h1 {
+        font-size: 35px;
+    }
+    .data{
+        font-size: 12px;
+    }
     }
 `
