@@ -10,7 +10,7 @@ export default function Header({underline}) {
         <StyledHeader>
             <img src={logoDoti} alt="logoDoti" />
             <h1 className={underline == "home" ? "underline" : ""}
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/home")}
             >Home</h1>
             <h1 className={underline == "blog" ? "underline" : ""}
             onClick={() => navigate("/blog")}
