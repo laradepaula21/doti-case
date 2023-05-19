@@ -1,4 +1,5 @@
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import Post from "./Post";
 import styled from "styled-components"
 import Blog_noticia1 from '../../assets/Blog_noticia1.png'
@@ -65,6 +66,7 @@ export default function Blog() {
             {noticias}
         </StyledNoticias>
         </StyledBlog>
+        <Footer></Footer>
 
     </>
     )
