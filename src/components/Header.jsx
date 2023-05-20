@@ -1,23 +1,33 @@
 import styled from "styled-components"
 import logoDoti from "../assets/logoDoti.png"
-import { useNavigate } from "react-router-dom"
+import ItemMenu from "./ItemMenu"
 
-export default function Header({underline}) {
+const menuOpcoes = [
+{
+    pagina: "home",
+    navigate: ""
+},
+{
+    pagina: "blog",
+    navigate: "blog"
 
-    const navigate = useNavigate();
+},
+{
+    pagina: "products",
+    navigate: "produtos"
+}
+]
+
+export default function Header(props) {
+
+    const menu = menuOpcoes.map(n=> (
+        <ItemMenu nome={n.pagina} nav={n.navigate} className="underline" key={n.pagina}></ItemMenu>
+    ))
 
     return (
         <StyledHeader>
             <img src={logoDoti} alt="logoDoti" />
-            <h1 className={underline == "home" ? "underline" : ""}
-            onClick={() => navigate("/")}
-            >Home</h1>
-            <h1 className={underline == "blog" ? "underline" : ""}
-            onClick={() => navigate("/blog")}
-            >Blog</h1>
-            <h1 className={underline == "products" ? "underline" : ""}
-            onClick={() => navigate("/produtos")}
-            >Produtos</h1>
+            {menu}
             <div>
                 <h2>Olá, Usuário</h2>
                 <ion-icon name="person"></ion-icon>
@@ -38,40 +48,7 @@ const StyledHeader = styled.div`
         height: 40px;
         width: auto;
     }
-    h1 {
-        font-weight: 600;
-        font-size: 27px;
-        color: #DCDCE1;
-        position: relative;
-    }
-    h1:hover {
-        cursor: pointer;
-        filter: brightness(107%)
-    }
-    h1::after {
-        content: '';
-        display: block;
-        width: 0;
-        height: 4px;
-        background-color: #8257E5;
-        position: absolute;
-        bottom: -27px;
-        left: 0;
-        transition: width 0.3s ease-in-out;
-    }
-    h1:hover::after {
-        width: 100%;
-    }
-    .underline::after {
-        content: '';
-        display: block;
-        width: 100%;
-        height: 4px;
-        background-color: #8257E5;
-        position: absolute;
-        bottom: -27px;
-        left: 0;
-    }
+
     div {
         display: flex;
         align-items: center;

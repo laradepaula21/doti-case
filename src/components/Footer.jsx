@@ -20,7 +20,6 @@ export default function Footer() {
             Informações de licensa javaScript
             </p>
        </div>
-
     </StyledFooter>
 }
 
