@@ -2,7 +2,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Blog from './pages/Blog/Blog';
 import Products from './pages/Products/Products';
-
 export default function App() {
   return (
     <BrowserRouter>
