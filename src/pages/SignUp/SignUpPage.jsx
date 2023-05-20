@@ -144,6 +144,7 @@ const FormStyled = styled.form`
         color: #DDDADA;
     }
     button {
+        font-family: 'Poppins', sans-serif;
         width: 418px;
         height: 50px;
         background: #633BBC;
