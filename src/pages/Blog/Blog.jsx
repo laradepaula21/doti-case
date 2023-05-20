@@ -52,7 +52,7 @@ export default function Blog() {
     console.log(noticias)
     return (
     <>
-        <Header underline="blog"></Header>
+        <Header underline="Blog"></Header>
         <StyledBlog>
         <StyledNewsLetter>
             <img src={Blog_banner} alt="Blog_banner"/>
