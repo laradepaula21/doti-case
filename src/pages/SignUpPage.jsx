@@ -11,6 +11,8 @@ export default function SignUp() {
     const [form, setForm] = useState({name: "", email: "", password: "", 
     confirmedPassword: "", adress: ""})
 
+    
+
     function handleForm(e) {
         e.preventDefault();
         setForm({...form, [e.target.name]: e.target.value});

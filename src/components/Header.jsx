@@ -9,15 +9,12 @@ export default function Header({underline}) {
     return (
         <StyledHeader>
             <img src={logoDoti} alt="logoDoti" />
-            <h1 className={underline == "home" ? "underline" : ""}
-            onClick={() => navigate("/home")}
-            >Home</h1>
-            <h1 className={underline == "blog" ? "underline" : ""}
-            onClick={() => navigate("/blog")}
-            >Blog</h1>
-            <h1 className={underline == "products" ? "underline" : ""}
-            onClick={() => navigate("/produtos")}
-            >Produtos</h1>
+            {underline == "home" ? <StyledUnderline></StyledUnderline> :
+            <h1 onClick={() => navigate("/home")}>Home</h1>}
+            {underline == "blog" ? <StyledUnderline></StyledUnderline> :
+            <h1 onClick={() => navigate("/blog")}>Blog</h1>}
+            {underline == "produtos" ? <StyledUnderline></StyledUnderline> :
+            <h1 onClick={() => navigate("/produtos")}>Produtos</h1>}
             <div>
                 <h2>Olá, Usuário</h2>
                 <ion-icon name="person"></ion-icon>
@@ -62,16 +59,6 @@ const StyledHeader = styled.div`
     h1:hover::after {
         width: 100%;
     }
-    .underline::after {
-        content: '';
-        display: block;
-        width: 100%;
-        height: 4px;
-        background-color: #8257E5;
-        position: absolute;
-        bottom: -27px;
-        left: 0;
-    }
     div {
         display: flex;
         align-items: center;
@@ -84,5 +71,18 @@ const StyledHeader = styled.div`
         ion-icon {
             font-size: 27px;
         }
+    }
+`
+
+const StyledUnderline = styled.h1`
+    ::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 4px;
+        background-color: #8257E5;
+        position: absolute;
+        bottom: -27px;
+        left: 0;
     }
 `
