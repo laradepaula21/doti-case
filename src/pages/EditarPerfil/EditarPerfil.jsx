@@ -20,7 +20,7 @@ export default function EditarPerfil() {
 
     return (
     <>
-    {/* <Header underline=""></Header> */}
+    <Header underline=""></Header>
     <EditStyled>
         <h1> Edite seu perfil</h1>
         <FormStyled>
