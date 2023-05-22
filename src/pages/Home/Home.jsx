@@ -4,7 +4,7 @@ export default function Home() {
 
     return (
     <>
-        <Header underline="home"></Header>
+        <Header underline="Home"></Header>
         aaaaaaaaaaaaa
     </>
     )

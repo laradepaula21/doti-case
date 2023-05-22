@@ -3,7 +3,7 @@ import Header from "../../components/Header";
 export default function Products() {
     return (
     <>
-        <Header underline="produtos"></Header>
+        <Header underline="Produtos"></Header>
     </>
     )
 }
