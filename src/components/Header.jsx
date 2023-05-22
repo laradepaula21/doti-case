@@ -33,6 +33,7 @@ export default function Header(props) {
             <a href="./../../SignUpPage">
             <StyledUser>
             <UserOutlined />
+
                 <h2>Olá, Usuário</h2>
             </StyledUser>
             </a>
@@ -122,3 +123,4 @@ const StyledHeaderDesktop = styled.div`
         display:none;
     }
 `
+
