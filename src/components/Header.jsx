@@ -30,7 +30,7 @@ export default function Header(props) {
         <StyledHeaderDesktop>
             <img src={logoDoti} alt="logoDoti" />
             {menu}
-            <a href="./../../">
+            <a href="./../../SignUpPage">
             <StyledUser>
             <UserOutlined />
 
