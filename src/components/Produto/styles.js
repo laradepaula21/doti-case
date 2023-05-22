@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 export const StyledGeral = styled.div`
     font-family: 'Poppins', sans-serif;
-    min-width: 360px;
     color: white;
     padding: 10px;
     display: flex;
@@ -28,20 +27,16 @@ export const StyledGeral = styled.div`
         height: 40px;
         cursor: pointer;
     }
-    @media(max-width: 600px) {
-        min-width:0;
-    }
 `
 export const StyledContainer = styled.div`
     display: flex;
     align-items: center;
     gap: 20px;
     color: #DCDCE1;
-    @media(max-width: 600px) {
+    width: 100%;
+    @media(max-width: 800px) {
         flex-direction: column; 
-        align-items: center;
-        padding: 10px;
-        width: 100%; 
+        padding: 10px;   
         text-align: center;
     }
 `
