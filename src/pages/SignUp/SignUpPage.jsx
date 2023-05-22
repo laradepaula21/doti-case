@@ -1,4 +1,6 @@
 import styled from "styled-components"
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
 import {  CompassOutlined, EyeInvisibleOutlined, 
 EyeOutlined, LockOutlined, MailOutlined, UserOutlined } from "@ant-design/icons";
 import { Input } from 'antd';
@@ -28,6 +30,7 @@ export default function SignUp() {
 
     return (
     <>
+    <Header underline=""></Header>
     <SignUpStyled>
         <h1> Crie sua conta</h1>
         <FormStyled>
@@ -86,6 +89,7 @@ export default function SignUp() {
             <a href="https://cpejr.com/portifolio/">política de privacidade</a> e nossos <br/>
             <a href="https://cpejr.com/portifolio/">termos de serviço</a></h2>
     </SignUpStyled>
+    <Footer></Footer>
     </>
     )
 }
