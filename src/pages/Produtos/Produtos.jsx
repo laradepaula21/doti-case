@@ -1,5 +1,5 @@
-// import Header from "../../components/Header";
-import Produtos from "./../../components/Produto/Produtos";
+import Header from "../../components/Header";
+import Produtos from "../../components/Produto/Produtos";
 import logoProduto1 from "./../../assets/discover-reduced.svg"
 import logoProduto2 from "./../../assets/explorer-reduced.svg"
 import logoProduto3 from "./../../assets/ignite-reduced.svg"
@@ -25,16 +25,15 @@ const dados =[
     
 ]
 
-
 export default function Products() {
 
     const produtos = dados.map(n => (
-        <Produtos dados={n}></Produtos>
+        <Produtos dados={n} key={n.titulo}></Produtos>
     ))
 
     return (
     <>  
-        <Header underline="produtos"></Header>
+        <Header underline="Produtos"></Header>
         <StyledPaginaProdutos>
             <StyledEsquerda>
                 <StyledCentroEsquerda> 

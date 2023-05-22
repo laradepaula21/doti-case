@@ -7,7 +7,7 @@ import { UserOutlined } from '@ant-design/icons'
 const menuOpcoes = [
     {
         pagina: "Home",
-        navigate: ""
+        navigate: "Home"
     },
     {
         pagina: "Blog",
@@ -30,7 +30,7 @@ export default function Header(props) {
         <StyledHeaderDesktop>
             <img src={logoDoti} alt="logoDoti" />
             {menu}
-            <a href="./../../SignUpPage">
+            <a href="./../../">
             <StyledUser>
             <UserOutlined />
 

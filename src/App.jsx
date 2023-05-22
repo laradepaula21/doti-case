@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import SignUp from './pages/SignUp/SignUpPage';
 import Home from './pages/Home/Home';
 import Blog from './pages/Blog/Blog';
-import Products from './pages/Products/Products';
+import Produtos from './pages/Produtos/Produtos';
 
 
 export default function App() {
@@ -12,7 +12,7 @@ export default function App() {
         <Route path="/" element={ <SignUp/>} />
         <Route path="/home" element={<Home/>} />
         <Route path="/blog" element={<Blog/>} />
-        <Route path="/produtos" element={<Products/>} />
+        <Route path="/produtos" element={<Produtos/>} />
       </Routes>
     </BrowserRouter>
   )
