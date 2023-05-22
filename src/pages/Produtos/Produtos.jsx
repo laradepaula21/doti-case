@@ -1,4 +1,5 @@
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import Produtos from "../../components/Produto/Produtos";
 import logoProduto1 from "./../../assets/discover-reduced.svg"
 import logoProduto2 from "./../../assets/explorer-reduced.svg"
@@ -45,8 +46,7 @@ export default function Products() {
                 {produtos}
             </StyledDireita>
         </StyledPaginaProdutos>
-
-
+        <Footer></Footer>
     </>
     )
 }
