@@ -4,6 +4,7 @@ import Home from './pages/Home/Home';
 import Blog from './pages/Blog/Blog';
 import Products from './pages/Products/Products';
 
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -16,4 +17,3 @@ export default function App() {
     </BrowserRouter>
   )
 }
-
