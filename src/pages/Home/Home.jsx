@@ -7,6 +7,7 @@ import HomeLogin from "./HomeLogin";
 export default function Home() {
 
     return (
+
         <>
 
         
@@ -34,6 +35,7 @@ export default function Home() {
                 </StyledDivReclamacoes>
             </StyledHome>
         </>
+
     )
 }
 

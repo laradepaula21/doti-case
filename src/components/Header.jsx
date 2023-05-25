@@ -1,32 +1,89 @@
 import styled from "styled-components"
 import logoDoti from "../assets/logoDoti.png"
-import { useNavigate } from "react-router-dom"
+import ItemMenu from "./ItemMenu"
+import Menu from "./Menu"
+import { UserOutlined } from '@ant-design/icons'
 
-export default function Header({underline}) {
+const menuOpcoes = [
+    {
+        pagina: "Home",
+        navigate: "Home"
+    },
+    {
+        pagina: "Blog",
+        navigate: "Blog"    
+    },
+    {
+        pagina: "Produtos",
+        navigate: "produtos"
+    }
+]
 
-    const navigate = useNavigate();
+export default function Header(props) {
 
-    return (
-        <StyledHeader>
+
+    const menu = menuOpcoes.map(n => (
+        <ItemMenu ativo={props.underline == n.pagina ? true : false} nome={n.pagina} nav={n.navigate} key={n.pagina}></ItemMenu>
+    ))
+
+    return (<header>
+        <StyledHeaderDesktop>
             <img src={logoDoti} alt="logoDoti" />
-            <h1 className={underline == "home" ? "underline" : ""}
-            onClick={() => navigate("/")}
-            >Home</h1>
-            <h1 className={underline == "blog" ? "underline" : ""}
-            onClick={() => navigate("/blog")}
-            >Blog</h1>
-            <h1 className={underline == "products" ? "underline" : ""}
-            onClick={() => navigate("/produtos")}
-            >Produtos</h1>
-            <div>
+            {menu}
+            <a href="./../../">
+            <StyledUser>
+            <UserOutlined />
+
                 <h2>Olá, Usuário</h2>
-                <ion-icon name="person"></ion-icon>
-            </div>
-        </StyledHeader>
+            </StyledUser>
+            </a>
+        </StyledHeaderDesktop>
+        <StyledHeaderMobile>
+        <img src={logoDoti} alt="logoDoti" />
+        <Menu mode="inline" defautOpenKeys={["dashboard"]}></Menu>
+        </StyledHeaderMobile>
+        </header>
     )
 }
 
-const StyledHeader = styled.div`
+const StyledHeaderMobile = styled.div`
+
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 2px;
+    background-color: #000000;
+
+    svg{
+        width: 30px;
+        height: 30px;
+        margin-top: 8px;
+    }
+
+    div {
+        width: 30px;
+        padding: 3px;
+    }
+    img {
+        height: 40px;
+        width: auto;
+    }
+    @media(min-width: 600px){
+        display:none;
+    }
+`
+
+const StyledUser = styled.div`
+    font-size: 20px;
+    display: flex;
+    gap: 20px;
+    padding: 10px
+`
+
+const StyledHeaderDesktop = styled.div`
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
     background-color: #121214;
     width: 100vw;
     height: 80px;
@@ -34,44 +91,21 @@ const StyledHeader = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-around;
+    border-bottom: solid 3px #000000;
+
+    a{
+    color: white;
+
+    &:hover{
+    opacity: .8;
+    transition: .8s;
+    }
+    }
     img {
         height: 40px;
         width: auto;
     }
-    h1 {
-        font-weight: 600;
-        font-size: 27px;
-        color: #DCDCE1;
-        position: relative;
-    }
-    h1:hover {
-        cursor: pointer;
-        filter: brightness(107%)
-    }
-    h1::after {
-        content: '';
-        display: block;
-        width: 0;
-        height: 4px;
-        background-color: #8257E5;
-        position: absolute;
-        bottom: -27px;
-        left: 0;
-        transition: width 0.3s ease-in-out;
-    }
-    h1:hover::after {
-        width: 100%;
-    }
-    .underline::after {
-        content: '';
-        display: block;
-        width: 100%;
-        height: 4px;
-        background-color: #8257E5;
-        position: absolute;
-        bottom: -27px;
-        left: 0;
-    }
+
     div {
         display: flex;
         align-items: center;
@@ -85,4 +119,8 @@ const StyledHeader = styled.div`
             font-size: 27px;
         }
     }
+    @media(max-width: 600px){
+        display:none;
+    }
 `
+
