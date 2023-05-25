@@ -10,13 +10,11 @@ export default function LoggedInfo (props){
 }
 
 const StyledLoggedInfo = styled.div`
+
     background-color: #633BBC;
     color: white;
-    padding: 5px 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-
+    padding: 6px 10px;
+    font-size: 14px;
+    border-radius: 2px;
+  
 `

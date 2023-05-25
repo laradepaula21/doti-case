@@ -1,101 +1,184 @@
 import styled from "styled-components";
 import LoggedInfo from "./LoggedInfo";
-import perfil from "../../assets/perfil.jpg"
+import perfil from "../../assets/perfil.png"
 
 const Users = [
     {
-        nome:`Lara`,
-        imagem:perfil, 
-        modalidade:`Remoto`,
-        horario:`11:30`,
-        tempo:`01:53`,
+        nome: `Usuario`,
+        frase: `frase`,
+        imagem: perfil,
+        modalidade: `Modalidade`,
+        horario: `00:00`,
+        tempo: `00:00`,
     },
 
     {
-        nome:`Jefferson`, 
-        imagem:perfil, 
-        modalidade:`Presencial`,
-        horario:`11:00`,
-        tempo:`02:00`,
+        nome: `Usuariio`,
+        frase: ``,
+        imagem: perfil,
+        modalidade: `Modalidade`,
+        horario: `00:00`,
+        tempo: `00:00`,
     },
 
     {
-        nome:`Lara`, 
-        imagem:perfil, 
-        modalidade:`Remoto`,
-        horario:`11:30`,
-        tempo:`01:53`,
+        nome: `Usuario`,
+        frase: `frase`,
+        imagem: perfil,
+        modalidade: `Modalidade`,
+        horario: `00:00`,
+        tempo: `00:00`,
+    },
+
+    {
+        nome: `Usuario`,
+        frase: ``,
+        imagem: perfil,
+        modalidade: `Modalidade`,
+        horario: `00:00`,
+        tempo: `00:00`,
     }
 
 ]
 
-export default function LoggedUsers (){
+export default function LoggedUsers() {
 
-    return(
-         <StyledLoggedUsers> 
-            {Users.map((user, index)=>
-            <UserProfile
-            key={index}
-            >
-            <ImageName>
-                <img src={user.imagem}></img>
-                <p>{user.nome}</p>
-            </ImageName>
-            <Teste>
-            <LoggedInfo info={user.modalidade}></LoggedInfo> 
-            <LoggedInfo info={user.horario}></LoggedInfo> 
-            <LoggedInfo info={user.tempo}></LoggedInfo> 
-            </Teste>
-            </UserProfile>
+    return (
+        <StyledLoggedUsers>
+            {Users.map((user, index) =>
+                <StyledUserProfile
+                    key={index}
+                >
+                    <StyledMembros>
+                        <img src={user.imagem}></img>
+                        <StyledNome>
+                            <n3>{user.nome}</n3>
+                            <StyledFrase>
+                                <p>{user.frase}</p>
+                            </StyledFrase>
+                        </StyledNome>
+                    </StyledMembros>
+                    <StyledOutros>
+                        <StyledModalidade> <LoggedInfo info={user.modalidade}> </LoggedInfo> </StyledModalidade>
+                        <StyledHorario> <LoggedInfo info={user.horario}></LoggedInfo> </StyledHorario>
+                       <StyledTempo>  <LoggedInfo info={user.tempo}></LoggedInfo> </StyledTempo>
+                    </StyledOutros>
+                </StyledUserProfile>
             )}
         </StyledLoggedUsers>
     );
 }
 
+
+
 const StyledLoggedUsers = styled.div`
 
     width: 100%;
     display: flex;
-    justify-content: center;
+    padding-top: 2%;
+    justify-content: space-between;
     flex-direction: column;
-    padding: 5%;
-    gap: 50px;
+
+
+
+`
+const StyledUserProfile = styled.div`
+
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 14px;
+
+`
+
+const StyledMembros = styled.div`
+
+    width: 50%;
+    height: 100px;
+    padding: 0px 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     img{
-        width: 40px;
+        padding: 0px 12px;
+        width: 50px;
         border-radius: 50%;
+    }
+
+    @media screen and (max-width: 767px) {
+
+    img{
+        display: none;
+    }
+}
+
+
+
+`
+const StyledNome = styled.div`
+
+    width: 100%;
+    display: flex ;
+    flex-direction: column;
+    font-weight: 400;
+    padding: 0px 12px;
+
+
+`
+
+const StyledFrase = styled.div`
+
+    width: 100%;
+    color: gray;
+    padding: 5px;
+
+    @media screen and (max-width: 500px) {
+
+        display: none;
 
     }
 
 `
 
-const Teste = styled.div`
 
-    width: 70%;
+
+const StyledOutros = styled.div`
+
+    width: 50%;
+    padding: 15px;
     display: flex;
-    gap: 5%;
-    flex-direction: row;
     justify-content: space-around;
-    background-color: red;
-    `
-
-const ImageName = styled.div`
-
-    width: 30%;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
     align-items: center;
-    justify-content: flex-start;
-    background-color: yellow;
-    `
 
-const UserProfile = styled.div`
+   
+`
 
+const StyledModalidade = styled.div `
+
+    width: 120px;
+    text-align: center;
+
+    @media screen and (max-width: 767px) {
+
+        display: none;
+
+    }
+`
+const StyledHorario = styled.div `
+
+    text-align: center;
+
+    @media screen and (max-width: 767px) {
+
+        display: none;
+
+    }
+`
+const StyledTempo = styled.div `
+
+    text-align: center;
+`
     
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    align-items: center;
-    justify-content: flex-start;
-    background-color: green;
-    `
+
