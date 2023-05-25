@@ -1,5 +1,5 @@
 {
-  "name": "doti",
+  "name": "doti-case",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,17 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-
-    "axios": "^1.4.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.11.2",
-    "styled-components": "^4.4.1"
-
-    "@ant-design/icons": "^5.1.0",
-    "antd": "^5.5.0",
-    "dotenv": "^16.0.3",
-
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
@@ -30,11 +21,6 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
-
-    "vite": "^4.3.8"
-
-    "react-router-dom": "^6.11.1",
-
-
+    "vite": "^4.3.2"
   }
 }
