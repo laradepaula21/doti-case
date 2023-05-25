@@ -11,7 +11,7 @@ export default function EditarPerfil() {
 
     function handleForm(e) {
         e.preventDefault();
-        setForm({...form, [e.target.name]: e.target.value});
+        setForm({...form, [e.target.name]: e.target.value}); 
     }
 
     function submitForm(e) {
