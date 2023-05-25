@@ -44,8 +44,16 @@ const StyledHomeLogin = styled.div`
 
 const StyledInputBotao = styled.div`
 
+    width: 100%;
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
+
+  @media screen and (max-width: 650px) {
+
+  width: 90%;
+
+  } 
 
 `
 
@@ -72,7 +80,7 @@ const StyledBotaoLogin = styled.button`
 `
 
 const StyledInput = styled.div`
-  width: 100%;
+  width: auto;
   border: 1px solid #1a1a1d;
   border-radius: 2px;
   display: flex;
@@ -91,6 +99,7 @@ const StyledInput = styled.div`
     text-align: left;
     border: none;
   }
+
 
 `;
 
@@ -114,4 +123,10 @@ const StyledMembroInput = styled.div`
     padding-inline-start: 5%;
     text-align: left;
   }
+
+  @media screen and (max-width: 650px) {
+
+    width: 90%;
+
+}
 `;
