@@ -67,11 +67,9 @@ export default function Blog() {
         </StyledNoticias>
         </StyledBlog>
         <Footer></Footer>
-
     </>
     )
 }
-
 
 const StyledBlog = styled.div`
     display: flex;
@@ -135,6 +133,7 @@ const StyledNewsLetter = styled.div`
         div {
         width: 100vw;
         height: 30vw;
+        min-height: 135;
         font-size: 10pt;
         display: flex;
         flex-direction: column;
@@ -163,7 +162,7 @@ const StyledNoticias = styled.div`
     flex-wrap: wrap;
     gap: 20px;
     margin: 20px;
-    justify-content: space-between;
+    justify-content: center;
 
     @media(max-width: 600px) {
     width: 100%;
@@ -171,6 +170,5 @@ const StyledNoticias = styled.div`
     flex-direction: column;
     min-width: 400px;
     gap: 5px;
-
     }
 `
