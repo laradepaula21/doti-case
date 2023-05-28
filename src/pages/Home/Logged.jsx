@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import LoggedInfo from "./LoggedInfo";
 import perfil from "../../assets/perfil.png"
+import { LogoutOutlined } from "@ant-design/icons";
 
 const Users = [
     {
@@ -13,7 +14,7 @@ const Users = [
     },
 
     {
-        nome: `Usuariio`,
+        nome: `Usuario`,
         frase: ``,
         imagem: perfil,
         modalidade: `Modalidade`,
@@ -62,6 +63,7 @@ export default function LoggedUsers() {
                         <StyledModalidade> <LoggedInfo info={user.modalidade}> </LoggedInfo> </StyledModalidade>
                         <StyledHorario> <LoggedInfo info={user.horario}></LoggedInfo> </StyledHorario>
                        <StyledTempo>  <LoggedInfo info={user.tempo}></LoggedInfo> </StyledTempo>
+                       <StyledLogout onClick={()=> console.log(`Deslogado`)}> <LogoutOutlined/> </StyledLogout>
                     </StyledOutros>
                 </StyledUserProfile>
             )}
@@ -179,6 +181,18 @@ const StyledHorario = styled.div `
 const StyledTempo = styled.div `
 
     text-align: center;
-`
     
+`
+
+const StyledLogout = styled.div `
+
+    font-size: 25px;
+    cursor: pointer;
+
+    &:hover{
+        color: #633bbc;
+    }
+
+
+`
 

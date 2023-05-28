@@ -1,4 +1,5 @@
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import styled from "styled-components";
 import LoggedUsers from "./Logged"
 import HomeLogin from "./HomeLogin";
@@ -9,8 +10,7 @@ export default function Home() {
     return (
 
         <>
-
-        
+            <Header underline="Home"></Header>v
             <StyledHome>
                 <div>
                     <StyledDivLogin>
@@ -23,6 +23,7 @@ export default function Home() {
                                 <StyledModalidadeTitulo> <h2> Modalidade </h2> </StyledModalidadeTitulo>
                                 <StyledHorarioTitulo> <h2> Chegada </h2> </StyledHorarioTitulo>
                                 <StyledTempoTitulo> <h2> Tempo </h2> </StyledTempoTitulo>
+                                <div className="espacoLogout"/>
                             </StyledOutrosTitulos>
                         </StyledDivTitulos>
                         <div>
@@ -31,9 +32,13 @@ export default function Home() {
                     </StyledLoggedNow>
                 </div>
                 <StyledDivReclamacoes>
-                    Tem alguma reclamação? Clique aqui!
+                    <p> Tem alguma reclamação? <StyledLinkReclamacoes href="https://docs.google.com/forms/d/1QtK3XIWlPJ5YYyzsmC9T9gpjdOUGVOW5qwE1Dx8dFmI/edit"  target="_blank"> 
+                         Clique aqui! 
+                    </StyledLinkReclamacoes>
+                    </p>
                 </StyledDivReclamacoes>
             </StyledHome>
+            <Footer></Footer>
         </>
 
     )
@@ -108,18 +113,22 @@ const StyledMembrosTitulo = styled.div`
 
     @media screen and (max-width: 768px) {
 
-        margin: 0;
+        margin: 2%;
 
     }
 
 `
 const StyledOutrosTitulos = styled.div`
 
-    width: 50%;
+    width: 52%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+
+    .espacoLogout{
+        width: 20px;
+    }
  
 `
 const StyledModalidadeTitulo = styled.div `
@@ -163,6 +172,17 @@ const StyledDivReclamacoes = styled.div`
     padding: 2%;
     padding-top: 30px;
     font-size: 16px;
+`
+
+const StyledLinkReclamacoes = styled.a`
+
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+
+    &:hover{
+        color: #633bbc;
+    }
 
 
 `

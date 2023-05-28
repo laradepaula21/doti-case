@@ -28,7 +28,6 @@ const StyledHomeLogin = styled.div`
   margin-left: auto;
   line-height: 30px;
   padding: 20px 0px;
-  font-size: 14px;
 
 
   @media screen and (max-width: 650px) {
@@ -44,7 +43,7 @@ const StyledHomeLogin = styled.div`
 
 const StyledInputBotao = styled.div`
 
-    width: 100%;
+    width: 280px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -71,20 +70,24 @@ const StyledBotaoLogin = styled.button`
     border: none;
     background-color: #633bbc;
     transition: background-color 0.3s ease;
+    cursor: pointer;
+
 
     &:hover {
-    background-color: #8257E5;
+    background-color: white;
+    color: #633bbc;
     }
 
 
 `
 
 const StyledInput = styled.div`
-  width: auto;
+  width: 100%;
   border: 1px solid #1a1a1d;
   border-radius: 2px;
   display: flex;
   align-items: center;
+
 
   &:focus-within {
     border-color: #633bbc;
@@ -98,6 +101,14 @@ const StyledInput = styled.div`
     padding-inline-start: 5%;
     text-align: left;
     border: none;
+    font-size: 14px;
+
+  @media screen and (max-width: 280px) {
+      
+    font-size: 12px;
+
+  } 
+
   }
 
 
@@ -105,7 +116,7 @@ const StyledInput = styled.div`
 
 const StyledMembroInput = styled.div`
 
-  width: 40%;
+  width: 280px;
   border: 1px solid #1a1a1d;
   border-radius: 2px;
   display: flex;
@@ -122,6 +133,14 @@ const StyledMembroInput = styled.div`
     color: white;
     padding-inline-start: 5%;
     text-align: left;
+    font-size: 14px;
+
+  @media screen and (max-width: 280px) {
+      
+    font-size: 12px;
+
+  } 
+
   }
 
   @media screen and (max-width: 650px) {
