@@ -36,6 +36,7 @@ const StyledFooter = styled.div`
     font-size: 12pt;
     font-weight: bold;
     font-family: 'Poppins', sans-serif;
+    text-align: center;
 
     .infoJs {
         font-weight: 100;
