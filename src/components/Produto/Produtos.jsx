@@ -15,7 +15,7 @@ export default function Produtos(props) {
                 <StyledContainer>
                     <div>                    
                         <h1> {item.titulo} </h1> 
-                        <h2> {item.texto} </h2>
+                        <h2> {item.texto} </h2> 
                     </div> 
                     <a href="https://www.rocketseat.com.br/" target="_blank"><RightCircleOutlined/></a>
                 </StyledContainer>
