@@ -27,6 +27,9 @@ export const StyledGeral = styled.div`
         height: 40px;
         cursor: pointer;
     }
+    a{
+        color:white;
+    }
 `
 export const StyledContainer = styled.div`
     display: flex;
