@@ -7,7 +7,7 @@ import Blog_noticia2 from '../../assets/Blog_noticia2.png'
 import Blog_noticia3 from '../../assets/Blog_noticia3.png'
 import Blog_noticia4 from '../../assets/Blog_noticia4.png'
 import Blog_noticia5 from '../../assets/Blog_noticia5.png'
-import Blog_banner from '../../assets/Blog_banner.png'
+
 
 
 const dados = [
@@ -55,7 +55,6 @@ export default function Blog() {
         <Header underline="Blog"></Header>
         <StyledBlog>
         <StyledNewsLetter>
-            <img src={Blog_banner} alt="Blog_banner"/>
             <div>
                 <h1>Blog da Rocketseat</h1>
                 <p>Junte-se a milhares de devs e acelere na direção dos seus objetivos. Transforme sua carreira em uma jornada de evolução contínua através das melhores tecnologias.</p>
