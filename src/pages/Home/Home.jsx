@@ -2,7 +2,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import LoggedUsers from "./Logged"
 import HomeLogin from "./HomeLogin";
-import {StyledHome, StyledDivLogin, StyledLoggedNow, StyledDivTitulos, StyledMembrosTitulo, StyledOutrosTitulos, StyledModalidadeTitulo,StyledHorarioTitulo, StyledTempoTitulo, StyledDivReclamacoes} from "./styles"
+import {StyledHome, StyledDivLogin, StyledLoggedNow, StyledDivTitulos, StyledMembrosTitulo, StyledOutrosTitulos, StyledModalidadeTitulo,StyledHorarioTitulo, StyledTempoTitulo, StyledDivReclamacoes, StyledLinkReclamacoes} from "./styles"
 
 export default function Home() {
 

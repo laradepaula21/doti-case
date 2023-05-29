@@ -1,5 +1,5 @@
 import styled from "styled-components"
-
+import Blog_banner from '../../assets/Blog_banner.png'
 
 
 export const StyledBlog = styled.div`
@@ -10,9 +10,10 @@ export const StyledBlog = styled.div`
     width: 100vw;
     color: white;
     font-family: 'Poppins', sans-serif;
+    min-width: 280px;
     
     @media(max-width: 600px) {
-    min-width: 400px;
+    min-width: 280px;
     width:100%;
     gap: 10px;
     }
@@ -22,18 +23,15 @@ export const StyledNewsLetter = styled.div`
     justify-content: center;
     width: 100vw;
     height: 30vw;
-    
-    img {
-        position: relative;
-        width: 100%;
-        min-width: 400px;
-        min-height: 135px
-    }
+    background: linear-gradient(62deg, rgba(34,19,70,1) 0%, rgba(0,0,0,1) 55%, rgba(14,77,12,1) 100%);
+    min-height: 135px;
+    min-width: 280px;
+
+
     div {
         height: 30vw;
         font-size: 20px;
-        min-width: 400px;
-        min-height: 135px;
+
         display: flex;
         flex-direction: column;
         justify-content: space-around;
