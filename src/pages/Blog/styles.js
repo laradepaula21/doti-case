@@ -100,6 +100,7 @@ export const StyledNoticias = styled.div`
     flex-direction: column;
     min-width: 400px;
     gap: 5px;
+    align-items: center;
     }
 `
 export const StyledPost = styled.div`
