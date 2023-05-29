@@ -2,6 +2,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import LoggedUsers from "./Logged"
 import HomeLogin from "./HomeLogin";
+import HomeCarousel from "../../components/HomeCarousel"
 import {StyledHome, StyledDivLogin, StyledLoggedNow, StyledDivTitulos, StyledMembrosTitulo, StyledOutrosTitulos, StyledModalidadeTitulo,StyledHorarioTitulo, StyledTempoTitulo, StyledDivReclamacoes, StyledLinkReclamacoes} from "./styles"
 
 export default function Home() {
@@ -9,8 +10,9 @@ export default function Home() {
     return (
 
         <>
-            <Header underline="Home"></Header>v
+            <Header underline="Home"></Header>
             <StyledHome>
+            <HomeCarousel />
                 <div>
                     <StyledDivLogin>
                         <HomeLogin></HomeLogin>
