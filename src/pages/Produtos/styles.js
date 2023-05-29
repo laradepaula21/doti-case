@@ -31,12 +31,16 @@ export const StyledEsquerda = styled.div`
         font-size: 20px;
         line-height: 30px;
         color: #DCDCE1;
+
     }
     @media(max-width: 800px) {
         margin-bottom: 30px;
         width:100%;
         padding-left: 0px;
         margin-top: 20px;
+        h1 {
+        font-size: 55px;
+        }
     }
 
 `
