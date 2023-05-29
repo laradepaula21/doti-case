@@ -1,7 +1,7 @@
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Post from "./Post";
-import styled from "styled-components"
+import {StyledBlog, StyledNewsLetter, StyledNoticias} from "./styles"
 import Blog_noticia1 from '../../assets/Blog_noticia1.png'
 import Blog_noticia2 from '../../assets/Blog_noticia2.png'
 import Blog_noticia3 from '../../assets/Blog_noticia3.png'
@@ -67,11 +67,9 @@ export default function Blog() {
         </StyledNoticias>
         </StyledBlog>
         <Footer></Footer>
-
     </>
     )
 }
-
 
 const StyledBlog = styled.div`
     display: flex;
@@ -173,3 +171,4 @@ const StyledNoticias = styled.div`
     gap: 5px;
     }
 `
+

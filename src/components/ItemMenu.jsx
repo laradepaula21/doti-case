@@ -17,7 +17,7 @@ const StyledItemMenu = styled.div`
     height: 100%;
     display: flex; 
     align-items:center;
-    font-size: 27px;
+    font-size: 2em;
     font-weight: 600;
     cursor: pointer;
     border-bottom: solid 3px #000000;
@@ -25,6 +25,10 @@ const StyledItemMenu = styled.div`
     &:hover{
         opacity: .8;
         transition: .8s;
+    }
+
+    @media(max-width: 950px){
+        font-size: 1.5em;
     }
 
     ${({ active }) => active && `

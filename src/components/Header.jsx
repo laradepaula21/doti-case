@@ -7,7 +7,7 @@ import { UserOutlined } from '@ant-design/icons'
 const menuOpcoes = [
     {
         pagina: "Home",
-        navigate: ""
+        navigate: "Home"
     },
     {
         pagina: "Blog",
@@ -30,10 +30,9 @@ export default function Header(props) {
         <StyledHeaderDesktop>
             <img src={logoDoti} alt="logoDoti" />
             {menu}
-            <a href="./../../SignUpPage">
+            <a href="./../../">
             <StyledUser>
             <UserOutlined />
-
                 <h2>Olá, Usuário</h2>
             </StyledUser>
             </a>
@@ -69,16 +68,16 @@ const StyledHeaderMobile = styled.div`
         height: 40px;
         width: auto;
     }
-    @media(min-width: 600px){
+
+    @media(min-width: 840px){
         display:none;
     }
 `
-
 const StyledUser = styled.div`
-    font-size: 20px;
+    font-size: 2rem;
     display: flex;
     gap: 20px;
-    padding: 10px
+    padding: 10px;
 `
 
 const StyledHeaderDesktop = styled.div`
@@ -101,6 +100,7 @@ const StyledHeaderDesktop = styled.div`
     transition: .8s;
     }
     }
+
     img {
         height: 40px;
         width: auto;
@@ -112,15 +112,27 @@ const StyledHeaderDesktop = styled.div`
         h2 {
             color: #FFFFFF;
             font-weight: 600;
-            font-size: 27px;
+            font-size: 2rem;
             padding-right: 20px;
         }
         ion-icon {
-            font-size: 27px;
+            font-size: 2rem;
         }
     }
-    @media(max-width: 600px){
+
+    @media(max-width: 839px){
+
+        div{
+            h2{
+                font-size: 1.5rem;
+            }
+        ion-icon {
+            font-size: 2rem;
+        }
+        }
+    }
+
+    @media(max-width: 839px){
         display:none;
     }
 `
-
