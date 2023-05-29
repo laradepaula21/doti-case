@@ -105,7 +105,7 @@ const StyledNewsLetter = styled.div`
         height: 30vw;
         font-size: 20px;
         min-width: 400px;
-        min-height: 135px
+        min-height: 135px;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
