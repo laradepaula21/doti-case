@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import logoDoti from "../assets/logoDoti.png"
+import logoDoti2 from "../assets/logoDoti2.png"
 import ItemMenu from "./ItemMenu"
 import Menu from "./Menu"
 import { UserOutlined } from '@ant-design/icons'
@@ -38,7 +39,7 @@ export default function Header(props) {
             </a>
         </StyledHeaderDesktop>
         <StyledHeaderMobile>
-        <img src={logoDoti} alt="logoDoti" />
+        <img src={logoDoti2} alt="logoDoti" />
         <Menu mode="inline" defautOpenKeys={["dashboard"]}></Menu>
         </StyledHeaderMobile>
         </header>
@@ -61,12 +62,12 @@ const StyledHeaderMobile = styled.div`
     }
 
     div {
-        width: 30px;
+        /* width: 30px; */
         padding: 3px;
     }
     img {
         height: 40px;
-        width: auto;
+        /* width: auto; */
     }
 
     @media(min-width: 840px){

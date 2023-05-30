@@ -22,9 +22,9 @@ function getItem(label, key, nav = false,path , icon, children, type) {
 const items = [
     getItem('', 'menu', false, "", <AppstoreOutlined />, [
         getItem('Ola usuário!', '0', true, "", <UserOutlined />),
-        getItem('Home', '1', true, ""),
+        getItem('Home', '1', true, "home"),
         getItem('Blog', '2', true, "blog"),
-        getItem('produtos', '3', true,"produtos"),
+        getItem('Produtos', '3', true,"produtos"),
     ]),
 ];
 

@@ -5,9 +5,9 @@ export default function Footer() {
 
     return <StyledFooter>
        <StyledIcons>
-        <FacebookFilled />
-        <TwitterSquareFilled />
-        <WifiOutlined />
+       <a href="https://cpejr.com" target="_blank"><FacebookFilled /></a>
+       <a href="https://cpejr.com" target="_blank"><TwitterSquareFilled /></a>
+       <a href="https://cpejr.com" target="_blank"><WifiOutlined /></a>
        </StyledIcons>
        <div>
             <p>
@@ -43,6 +43,9 @@ const StyledFooter = styled.div`
         color: #B0B0B0;
         cursor: pointer;
 
+    }
+    a{
+        color:white;
     }
 
 `

@@ -10,11 +10,9 @@ export const StyledBlog = styled.div`
     width: 100vw;
     color: white;
     font-family: 'Poppins', sans-serif;
-    min-width: 280px;
-    
-    @media(max-width: 600px) {
-    min-width: 280px;
     width:100%;
+    @media(max-width: 600px) {
+    
     gap: 10px;
     }
 `
@@ -25,12 +23,11 @@ export const StyledNewsLetter = styled.div`
     height: 30vw;
     background: linear-gradient(62deg, rgba(34,19,70,1) 0%, rgba(0,0,0,1) 55%, rgba(14,77,12,1) 100%);
     min-height: 135px;
-    min-width: 280px;
 
 
     div {
         height: 30vw;
-        font-size: 20px;
+        font-size: 1.5em;
 
         display: flex;
         flex-direction: column;
@@ -44,7 +41,7 @@ export const StyledNewsLetter = styled.div`
             text-align: center;
         }
         h1 {
-            font-size: 50px;
+            font-size: 1.5em;
             font-weight: bold;
         }
         button {
@@ -60,7 +57,7 @@ export const StyledNewsLetter = styled.div`
     @media(max-width: 600px) {
         div {
         width: 100vw;
-        height: 30vw;
+        height: auto;
         min-height: 135;
         font-size: 10pt;
         display: flex;
@@ -96,16 +93,14 @@ export const StyledNoticias = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-    min-width: 400px;
     gap: 5px;
     align-items: center;
     }
 `
 export const StyledPost = styled.div`
     font-family: 'Poppins', sans-serif;
-    width: 45%;
+    width: 100%;
     max-width: 465px;
-    min-width: 365px;
     height: 250px;
     color: white;
     overflow: hidden;
