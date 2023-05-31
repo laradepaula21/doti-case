@@ -27,7 +27,7 @@ export const EditStyled = styled.div`
         filter: brightness(120%)
     }
     @media(max-width: 600px){
-        width: 80%;
+        width: 90%;
         height: 350px;
         h1{
             font-size:20px;
@@ -67,7 +67,8 @@ export const FormStyled = styled.form`
         border-radius: 9px;
         transition: all 0.3s ease-in-out; 
         @media(max-width: 600px){
-        width: 80%;
+        width: 90%;
+        margin: 10px;
         align-items: center;
 
     }
@@ -77,8 +78,12 @@ export const FormStyled = styled.form`
         color: #633BBC;
     }
     @media(max-width: 600px){
-        width: 80%;
+        width: 100%;
         align-items: center;
+        button{
+            font-weight: 550;
+            font-size: 19px;
+        }
 
     }
 `
@@ -113,6 +118,6 @@ export const InputStyled = styled(Input)`
         filter: brightness(120%)
     }
     @media(max-width: 600px){
-        width: 80%;
+        width: 100%;
     }
 `

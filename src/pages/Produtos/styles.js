@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const StyledPaginaProdutos = styled.div`
     display:flex;
     width: 100%;
-    min-width: 360px;
+    /* min-width: 360px; */
     @media(max-width: 800px) {
         flex-direction: column; 
         align-items: center;
@@ -39,7 +39,7 @@ export const StyledEsquerda = styled.div`
         padding-left: 0px;
         margin-top: 20px;
         h1 {
-        font-size: 55px;
+        font-size: 40px;
         }
     }
 
