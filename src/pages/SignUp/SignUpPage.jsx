@@ -5,6 +5,7 @@ EyeOutlined, LockOutlined, MailOutlined, UserOutlined, EditOutlined } from "@ant
 import { useState } from "react";
 import {SignUpStyled, FormStyled, InputStyled,InputPassword } from "./styles"
 import { useNavigate } from "react-router-dom/dist";
+import api from "../../services/api";
 
 export default function SignUp() {
 
@@ -12,21 +13,34 @@ export default function SignUp() {
 
     const [passwordVisible, setPasswordVisible] = useState(false);
     const [confirmedPasswordVisible, setConfirmedPasswordVisible] = useState(false);
-    const [form, setForm] = useState({name: "", email: "", password: "", 
-    confirmedPassword: "", adress: "", aboutyou: ""})
+    const [form, setForm] = useState({nome: "", email: "", senha: "",
+    endereco: "", descricao: ""})
+    const [confirmedPassword, setConfirmedPassword] = useState("")
 
     
 
     function handleForm(e) {
         e.preventDefault();
+        if (e.target.name === "confirmedPassword") {
+            return setConfirmedPassword(e.target.value)
+        }
         setForm({...form, [e.target.name]: e.target.value});
     }
 
-    function submitForm(e) {
+    async function submitForm(e) {
         e.preventDefault();
-        if (form.password != form.confirmedPassword) {
+        if (form.senha !== confirmedPassword) {
             return alert("A senha e a confirmação de senha foram escritas diferentemente. " + 
             "Tente novamente")
+        }
+        console.log(form)
+
+        try {
+            const res = await api.post("/usuarios", form);
+            console.log(res.data);
+            navigate("/home")
+        } catch (err) {
+            console.error(err);
         }
     }
 
@@ -38,9 +52,9 @@ export default function SignUp() {
             <InputStyled placeholder="Nome" 
             prefix={<UserOutlined className="icon"/>}
             type="name"
-            name="name"
+            name="nome"
             required
-            value={form.name}
+            value={form.nome}
             onChange={handleForm}
             />
             <InputStyled placeholder="E-mail" 
@@ -54,13 +68,13 @@ export default function SignUp() {
             <InputPassword placeholder="Senha" 
             prefix={<LockOutlined className="icon"/>}
             type="password"
-            name="password"
+            name="senha"
             visibilityToggle={{ visible: passwordVisible, onVisibleChange: setPasswordVisible }}
             iconRender={(visible) => 
             (visible ? <EyeOutlined style={{color: "white"}}/> :
              <EyeInvisibleOutlined style={{color: "white"}}/>)}
              required
-             value={form.password}
+             value={form.senha}
             onChange={handleForm}
             />
             <InputPassword placeholder="Confirme sua senha" 
@@ -72,22 +86,22 @@ export default function SignUp() {
             type="password"
             name="confirmedPassword" 
             required
-            value={form.confirmedPassword}
+            value={confirmedPassword}
             onChange={handleForm}
             />
             <InputStyled placeholder="Endereço" 
             prefix={<CompassOutlined className="icon"/>}
             type="text"
-            name="adress"
+            name="endereco"
             required
             value={form.adress}
             onChange={handleForm}
             /><InputStyled placeholder="Sobre você" 
             prefix={<EditOutlined className="icon"/>}
             type="text"
-            name="aboutyou"
+            name="descricao"
             required
-            value={form.aboutyou}
+            value={form.descricao}
             onChange={handleForm}
             />
             <button type="submit" onClick={submitForm}>CADASTRAR</button>

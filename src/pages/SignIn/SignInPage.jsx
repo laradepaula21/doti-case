@@ -4,23 +4,31 @@ import { useState } from "react";
 import { FormStyled, InputStyled,InputPassword, SignInStyled, LogoStyled, LogoStyleResponsive } from "./styles"
 import logoDoti from "../../assets/logoDoti.png"
 import { useNavigate } from "react-router-dom";
+import api from "../../services/api";
 
 export default function SignIn() {
 
     const navigate = useNavigate()
 
     const [passwordVisible, setPasswordVisible] = useState(false);
-    const [form, setForm] = useState({email: "", password: ""})
+    const [form, setForm] = useState({email: "", senha: ""})
 
     
 
-    function handleForm(e) {
+    async function handleForm(e) {
         e.preventDefault();
         setForm({...form, [e.target.name]: e.target.value});
     }
 
-    function submitForm(e) {
+    async function submitForm(e) {
         e.preventDefault();
+        try {
+            const res = await api.post("/sessoes", form);
+            console.log(res.data);
+            navigate("/home")
+        } catch (err) {
+            alert(err.message);
+        }
     }
 
     return (
@@ -48,13 +56,13 @@ export default function SignIn() {
             <InputPassword placeholder="Senha" 
             prefix={<LockOutlined className="icon"/>}
             type="password"
-            name="password"
+            name="senha"
             visibilityToggle={{ visible: passwordVisible, onVisibleChange: setPasswordVisible }}
             iconRender={(visible) => 
             (visible ? <EyeOutlined style={{color: "white"}}/> :
              <EyeInvisibleOutlined style={{color: "white"}}/>)}
              required
-             value={form.password}
+             value={form.senha}
             onChange={handleForm}
             />
             <button type="submit" onClick={submitForm}>CADASTRAR</button>
