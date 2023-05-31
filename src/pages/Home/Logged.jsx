@@ -5,48 +5,10 @@ import {StyledLoggedUsers, StyledUserProfile, StyledMembros, StyledNome, StyledF
 StyledModalidade, StyledHorario, StyledTempo,StyledLogout} from "./styles"
 import { useState } from "react";
 
-const Users = [
-    {
-        nome: `Bernardo`,
-        frase: `frase`,
-        imagem: perfil,
-        modalidade: `Modalidade`,
-        horario: `00:00`,
-        tempo: `00:00`,
-    },
 
-    {
-        nome: `Jefferson`,
-        frase: ``,
-        imagem: perfil,
-        modalidade: `Modalidade`,
-        horario: `00:00`,
-        tempo: `00:00`,
-    },
+export default function LoggedUsers( { users }) {
 
-    {
-        nome: `Vitoria`,
-        frase: `frase`,
-        imagem: perfil,
-        modalidade: `Modalidade`,
-        horario: `00:00`,
-        tempo: `00:00`,
-    },
-
-    {
-        nome: `Lara`,
-        frase: ``,
-        imagem: perfil,
-        modalidade: `Modalidade`,
-        horario: `00:00`,
-        tempo: `00:00`,
-    }
-
-]
-
-export default function LoggedUsers() {
-
-    const [members, setMembers] = useState(Users);
+    const [members, setMembers] = useState(users);
 
     // function searchMembers(e) {
     //     e.preventDefault();

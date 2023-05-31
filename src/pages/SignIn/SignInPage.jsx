@@ -1,8 +1,8 @@
 import { EyeInvisibleOutlined, 
 EyeOutlined, LockOutlined, MailOutlined} from "@ant-design/icons";
 import { useState } from "react";
-import { FormStyled, InputStyled,InputPassword, SignInStyled, LogoStyled, LogoStyleResponsive } from "./styles"
-import logoDoti from "../../assets/logoDoti.png"
+import { FormStyled, InputStyled,InputPassword, SignInStyled, LogoStyled, Container } from "./styles"
+import logoDoti from "../../assets/logoDoti2.png"
 import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
 
@@ -23,25 +23,20 @@ export default function SignIn() {
     async function submitForm(e) {
         e.preventDefault();
         try {
-            const res = await api.post("/sessoes", form);
+            const res = await api.post("/login", form);
             console.log(res.data);
             navigate("/home")
         } catch (err) {
-            alert(err.message);
+            alert(err.response.data.message);
         }
     }
 
     return (
-    <>
+    <Container>
     <LogoStyled>
         <img src={logoDoti} alt="logoDoti" />  
         <h1>Bem vindo ao Doti! Faça seu login na plataforma</h1>
     </LogoStyled>
-    
-    <LogoStyleResponsive>
-        <img src={logoDoti} alt="logoDoti" />  
-        <h1>Bem vindo ao Doti! Faça seu login na plataforma</h1>
-    </LogoStyleResponsive>
 
     <SignInStyled>
         <FormStyled>
@@ -69,6 +64,6 @@ export default function SignIn() {
         </FormStyled>
         <h2>Não tem uma conta? <a onClick={() => navigate("/")}>Registre-se</a></h2>
     </SignInStyled>
-    </>
+    </Container>
     )
 }

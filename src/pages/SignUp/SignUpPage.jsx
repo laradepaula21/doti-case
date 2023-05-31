@@ -40,7 +40,7 @@ export default function SignUp() {
             console.log(res.data);
             navigate("/home")
         } catch (err) {
-            console.error(err);
+            alert(err.response.data.message);
         }
     }
 
