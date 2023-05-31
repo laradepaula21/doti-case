@@ -4,8 +4,11 @@ import {  CompassOutlined, EyeInvisibleOutlined,
 EyeOutlined, LockOutlined, MailOutlined, UserOutlined, EditOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import {SignUpStyled, FormStyled, InputStyled,InputPassword } from "./styles"
+import { useNavigate } from "react-router-dom/dist";
 
 export default function SignUp() {
+
+    const navigate = useNavigate();
 
     const [passwordVisible, setPasswordVisible] = useState(false);
     const [confirmedPasswordVisible, setConfirmedPasswordVisible] = useState(false);
@@ -29,7 +32,6 @@ export default function SignUp() {
 
     return (
     <>
-    <Header underline=""></Header>
     <SignUpStyled>
         <h1> Crie sua conta</h1>
         <FormStyled>
@@ -90,12 +92,11 @@ export default function SignUp() {
             />
             <button type="submit" onClick={submitForm}>CADASTRAR</button>
         </FormStyled>
-        <h2>Já tem uma conta? <a href="https://cpejr.com/portifolio/">Entre!</a></h2>
+        <h2>Já tem uma conta? <a onClick={() => navigate("/login")}>Entre!</a></h2>
         <h2>Ao se registrar, você aceita nossa <br/>
             <a href="https://cpejr.com/portifolio/">política de privacidade</a> e nossos <br/>
             <a href="https://cpejr.com/portifolio/">termos de serviço</a></h2>
     </SignUpStyled>
-    <Footer></Footer>
     </>
     )
 }

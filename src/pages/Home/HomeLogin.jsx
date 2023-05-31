@@ -1,18 +1,14 @@
 import React from "react";
-import {StyledHomeLogin, StyledMembroInput, StyledInputBotao,StyledInput,StyledBotaoLogin } from "./styles"
+import {StyledHomeLogin, StyledInputBotao,StyledInput,StyledBotaoLogin } from "./styles"
 
-export default function HomeLogin() {
+export default function HomeLogin({searchMembers}) {
   return (
     <StyledHomeLogin>
-      <StyledMembroInput>
-        <input type="text" placeholder="Pesquisar membros" />
-      </StyledMembroInput>
-      <StyledInputBotao>
-        <StyledInput>
-          <input type="text" placeholder="Digite o nome do membro" />
-        </StyledInput>
+            <input type="text" placeholder="Pesquisar membros" onChange={searchMembers}/>
+        <StyledInputBotao>
+            <input type="text" placeholder="Digite o nome do membro" />
         <StyledBotaoLogin>Login</StyledBotaoLogin>
-      </StyledInputBotao>
+        </StyledInputBotao>
     </StyledHomeLogin>
   );
 }
