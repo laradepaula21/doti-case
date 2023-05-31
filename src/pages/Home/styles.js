@@ -148,7 +148,19 @@ export const StyledHomeLogin = styled.div`
   margin-left: auto;
   line-height: 30px;
   padding: 20px 0px;
-
+  input {
+    width: 280px;
+    border: 1px solid #1a1a1d;
+    border-radius: 2px;
+    outline: none;
+    background-color: #1a1a1d;
+    color: white;
+    padding-inline-start: 10px;
+    font-size: 14px;
+  &:focus-within {
+    border-color: #633bbc;
+  }
+}
 
   @media screen and (max-width: 650px) {
 
@@ -158,6 +170,9 @@ export const StyledHomeLogin = styled.div`
     flex-direction: column;
     align-items: center;
     line-height: 30px;
+    input:first-child{
+        width: 338px;
+    }
   }
 `;
 export const StyledInputBotao = styled.div`
@@ -230,41 +245,7 @@ export const StyledInput = styled.div`
 
 
 `;
-export const StyledMembroInput = styled.div`
 
-  width: 280px;
-  border: 1px solid #1a1a1d;
-  border-radius: 2px;
-  display: flex;
-  align-items: center;
-
-  &:focus-within {
-    border-color: #633bbc;
-  }
-
-  input {
-    width: 100%;
-    outline: none;
-    background-color: #1a1a1d;
-    color: white;
-    padding-inline-start: 5%;
-    text-align: left;
-    font-size: 14px;
-
-  @media screen and (max-width: 280px) {
-      
-    font-size: 12px;
-
-  } 
-
-  }
-
-  @media screen and (max-width: 650px) {
-
-    width: 90%;
-
-}
-`;
 export const StyledLoggedUsers = styled.div`
 
     width: 100%;
