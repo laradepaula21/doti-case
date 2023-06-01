@@ -17,7 +17,7 @@ const StyledItemMenu = styled.div`
     height: 100%;
     display: flex; 
     align-items:center;
-    font-size: 2em;
+    font-size: 1.8em;
     font-weight: 600;
     cursor: pointer;
     border-bottom: solid 3px #000000;

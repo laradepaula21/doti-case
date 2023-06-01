@@ -72,7 +72,7 @@ export default function SignIn() {
         </FormStyled>
         <h2>Não tem uma conta? <a onClick={() => navigate("/")}>Registre-se</a></h2>
     </SignInStyled>
-    </>
+    </ContainerSignIn>
 
 
     )
