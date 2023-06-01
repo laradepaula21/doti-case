@@ -9,6 +9,7 @@ export const StyledHome = styled.div`
     background-color: black;
     color: white;
     font-family: 'Poppins', sans-serif;
+    margin-top: 80px;
    
     @media screen and (max-width: 650px) {
 

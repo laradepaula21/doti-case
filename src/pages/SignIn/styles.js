@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Input } from 'antd';
 
-export const Container = styled.div`
+export const ContainerSignIn = styled.div`
     height: 80%;
     align-self: center;
     display: flex;

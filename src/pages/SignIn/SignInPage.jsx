@@ -1,7 +1,7 @@
 import { EyeInvisibleOutlined, 
 EyeOutlined, LockOutlined, MailOutlined} from "@ant-design/icons";
 import { useState } from "react";
-import { FormStyled, InputStyled,InputPassword, SignInStyled, LogoStyled, Container } from "./styles"
+import { FormStyled, InputStyled,InputPassword, SignInStyled, LogoStyled, ContainerSignIn } from "./styles"
 import logoDoti from "../../assets/logoDoti2.png"
 import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
@@ -32,38 +32,38 @@ export default function SignIn() {
     }
 
     return (
-    <Container>
-    <LogoStyled>
-        <img src={logoDoti} alt="logoDoti" />  
-        <h1>Bem vindo ao Doti! Faça seu login na plataforma</h1>
-    </LogoStyled>
+    <ContainerSignIn>
+        <LogoStyled>
+            <img src={logoDoti} alt="logoDoti" />  
+            <h1>Bem vindo ao Doti! Faça seu login na plataforma</h1>
+        </LogoStyled>
 
-    <SignInStyled>
-        <FormStyled>
-            <InputStyled placeholder="E-mail" 
-            prefix={<MailOutlined className="icon"/>}
-            type="email"
-            name="email"
-            required
-            value={form.email}
-            onChange={handleForm}
-            />
-            <InputPassword placeholder="Senha" 
-            prefix={<LockOutlined className="icon"/>}
-            type="password"
-            name="senha"
-            visibilityToggle={{ visible: passwordVisible, onVisibleChange: setPasswordVisible }}
-            iconRender={(visible) => 
-            (visible ? <EyeOutlined style={{color: "white"}}/> :
-             <EyeInvisibleOutlined style={{color: "white"}}/>)}
-             required
-             value={form.senha}
-            onChange={handleForm}
-            />
-            <button type="submit" onClick={submitForm}>CADASTRAR</button>
-        </FormStyled>
-        <h2>Não tem uma conta? <a onClick={() => navigate("/")}>Registre-se</a></h2>
-    </SignInStyled>
-    </Container>
+        <SignInStyled>
+            <FormStyled>
+                <InputStyled placeholder="E-mail" 
+                prefix={<MailOutlined className="icon"/>}
+                type="email"
+                name="email"
+                required
+                value={form.email}
+                onChange={handleForm}
+                />
+                <InputPassword placeholder="Senha" 
+                prefix={<LockOutlined className="icon"/>}
+                type="password"
+                name="senha"
+                visibilityToggle={{ visible: passwordVisible, onVisibleChange: setPasswordVisible }}
+                iconRender={(visible) => 
+                (visible ? <EyeOutlined style={{color: "white"}}/> :
+                <EyeInvisibleOutlined style={{color: "white"}}/>)}
+                required
+                value={form.senha}
+                onChange={handleForm}
+                />
+                <button type="submit" onClick={submitForm}>CADASTRAR</button>
+            </FormStyled>
+            <h2>Não tem uma conta? <a onClick={() => navigate("/")}>Registre-se</a></h2>
+        </SignInStyled>
+    </ContainerSignIn>
     )
 }
