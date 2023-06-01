@@ -96,6 +96,9 @@ const StyledHeaderDesktop = styled.div`
     align-items: center;
     justify-content: space-around;
     border-bottom: solid 3px #000000;
+    position: fixed;
+    top: 0;
+    z-index: 10;
 
     a{
     color: white;
