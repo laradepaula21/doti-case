@@ -4,13 +4,18 @@ import { useState } from "react";
 import { FormStyled, InputStyled,InputPassword, SignInStyled, LogoStyled, LogoStyleResponsive } from "./styles"
 import logoDoti from "../../assets/logoDoti.png"
 import { useNavigate } from "react-router-dom";
+import useAuthStore from "../../stores/auth";
 
 export default function SignIn() {
 
     const navigate = useNavigate()
 
     const [passwordVisible, setPasswordVisible] = useState(false);
-    const [form, setForm] = useState({email: "", password: ""})
+    const [form, setForm] = useState({email: "", password: ""});
+    const token = useAuthStore((state) => state.token);
+    const usuario = useAuthStore((state) => state.usuario);
+    const setToken = useAuthStore((state) => state.setToken);
+
 
     
 
