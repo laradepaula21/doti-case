@@ -149,8 +149,34 @@ export const StyledHomeLogin = styled.div`
   margin-left: auto;
   line-height: 30px;
   padding: 20px 0px;
+
+  @media screen and (max-width: 650px) {
+
+    width: 100%;
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    line-height: 30px;
+
+  }
+`;
+export const StyledInputBotao = styled.div`
+
+    max-width: 360px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+  @media screen and (max-width: 650px) {
+
+    width: 90%;
+
+  } 
+
   input {
-    width: 280px;
+    width: 100%;
     border: 1px solid #1a1a1d;
     border-radius: 2px;
     outline: none;
@@ -160,34 +186,12 @@ export const StyledHomeLogin = styled.div`
     font-size: 14px;
   &:focus-within {
     border-color: #633bbc;
-  }
+
 }
-
-  @media screen and (max-width: 650px) {
-
-    width: 100%;
-    gap: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    line-height: 30px;
-    input:first-child{
-        width: 338px;
-    }
-  }
-`;
-export const StyledInputBotao = styled.div`
-
-    width: 280px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-
-  @media screen and (max-width: 650px) {
-
-  width: 90%;
-
-  } 
+@media screen and (max-width: 280px){
+font-size: 12px;
+}
+}
 
 `
 export const StyledBotaoLogin = styled.button`
@@ -212,40 +216,8 @@ export const StyledBotaoLogin = styled.button`
     color: #633bbc;
     }
 
-
+    
 `
-export const StyledInput = styled.div`
-  width: 100%;
-  border: 1px solid #1a1a1d;
-  border-radius: 2px;
-  display: flex;
-  align-items: center;
-
-
-  &:focus-within {
-    border-color: #633bbc;
-  }
-
-  input {
-    width: 100%;
-    outline: none;
-    background-color: #1a1a1d;
-    color: white;
-    padding-inline-start: 5%;
-    text-align: left;
-    border: none;
-    font-size: 14px;
-
-  @media screen and (max-width: 280px) {
-      
-    font-size: 12px;
-
-  } 
-
-  }
-
-
-`;
 
 export const StyledLoggedUsers = styled.div`
 
@@ -289,8 +261,6 @@ export const StyledMembros = styled.div`
     }
 }
 
-
-
 `
 export const StyledNome = styled.div`
 
@@ -299,8 +269,6 @@ export const StyledNome = styled.div`
     flex-direction: column;
     font-weight: 400;
     padding: 0px 12px;
-
-
 `
 export const StyledFrase = styled.div`
 
