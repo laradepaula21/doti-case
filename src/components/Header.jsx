@@ -79,6 +79,10 @@ const StyledUser = styled.div`
     display: flex;
     gap: 20px;
     padding: 10px;
+    h2{
+        font-size:1.8rem;
+    }
+
 `
 
 const StyledHeaderDesktop = styled.div`
@@ -113,11 +117,8 @@ const StyledHeaderDesktop = styled.div`
         h2 {
             color: #FFFFFF;
             font-weight: 600;
-            font-size: 2rem;
+            font-size: 1.8rem;
             padding-right: 20px;
-        }
-        ion-icon {
-            font-size: 2rem;
         }
     }
 
@@ -125,11 +126,8 @@ const StyledHeaderDesktop = styled.div`
 
         div{
             h2{
-                font-size: 1.5rem;
+                font-size: 1rem;
             }
-        ion-icon {
-            font-size: 2rem;
-        }
         }
     }
 
