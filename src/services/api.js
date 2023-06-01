@@ -1,5 +1,19 @@
 import axios from "axios";
+import useAuthStore from "../stores/auth";
 
-const api = axios.create({baseURL: "http://127.0.0.1:8000"})
+const api = axios.create({baseURL: "http://localhost:8000"})
+
+api.interceptors.request.use(
+    (req) => {
+        const { token } = useAuthStore.getState();
+
+        if(!req.headers.Authorization && token) {
+            req.headers.Authorization = `Bearer ${token}`;
+        }
+        
+        return req;
+    }, 
+    (err) => Promise.reject(err)
+)
 
 export default api;

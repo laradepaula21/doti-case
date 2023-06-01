@@ -5,7 +5,8 @@ import HomeCarousel from "../../components/HomeCarousel"
 import {StyledHome, StyledDivLogin, StyledLoggedNow, StyledDivTitulos, StyledMembrosTitulo, StyledOutrosTitulos, StyledModalidadeTitulo,StyledHorarioTitulo, StyledTempoTitulo, StyledDivReclamacoes, StyledLinkReclamacoes} from "./styles"
 import HomeLogin from "./HomeLogin";
 import perfil from "../../assets/perfil.png"
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import api from "../../services/api";
 
 const users = [
     {
@@ -48,7 +49,21 @@ const users = [
 
 export default function Home() {
 
+    useEffect(() => {
+        async function getSessions() {
+            try {
+                const res = await api.get("/sessoes");
+                console.log(res.data);
+            } catch (err) {
+                console.log(err);
+            }
+        }
+        getSessions();
+        setInterval(getSessions, 10000);
+    }, []);
+
     const [members, setMembers] = useState(users);
+
 
     function searchMembers(e) {
         e.preventDefault();
