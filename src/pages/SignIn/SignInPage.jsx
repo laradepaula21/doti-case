@@ -29,7 +29,9 @@ export default function SignIn() {
         e.preventDefault();
         try {
             const res = await api.post("/login", form);
-            console.log(res.data);
+            console.log(res.data.token)
+            const session = await api.post("sessoes", { headers: { Authorization: `bearer ${res.data.token}` } });
+            console.log(session.data);
             navigate("/home")
         } catch (err) {
             alert(err.response.data.message);

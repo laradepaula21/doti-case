@@ -38,7 +38,7 @@ export default function SignUp() {
         try {
             const res = await api.post("/usuarios", form);
             console.log(res.data);
-            navigate("/home")
+            navigate("/login")
         } catch (err) {
             alert(err.response.data.message);
         }
