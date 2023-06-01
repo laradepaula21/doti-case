@@ -12,7 +12,7 @@ export default function SignIn() {
     const navigate = useNavigate()
 
     const [passwordVisible, setPasswordVisible] = useState(false);
-    const [form, setForm] = useState({email: "", password: ""});
+    const [form, setForm] = useState({email: "", senha: ""});
 
     const token = useAuthStore((state) => state.token);
     const usuario = useAuthStore((state) => state.usuario);
@@ -28,11 +28,13 @@ export default function SignIn() {
     async function submitForm(e) {
         e.preventDefault();
         try {
+            console.log(form)
             const res = await api.post("/login", form);
             const { token } = res.data;
             setToken(token);
             navigate("/home");
         } catch (err) {
+            console.log(err)
             alert(err.response.data.message);
         }
     }
@@ -58,13 +60,13 @@ export default function SignIn() {
             <InputPassword placeholder="Senha" 
             prefix={<LockOutlined className="icon"/>}
             type="password"
-            name="password"
+            name="senha"
             visibilityToggle={{ visible: passwordVisible, onVisibleChange: setPasswordVisible }}
             iconRender={(visible) => 
             (visible ? <EyeOutlined style={{color: "white"}}/> :
              <EyeInvisibleOutlined style={{color: "white"}}/>)}
              required
-             value={form.password}
+             value={form.senha}
             onChange={handleForm}
             />
             <button type="submit" onClick={submitForm}>ENTRAR</button>

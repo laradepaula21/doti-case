@@ -3,8 +3,9 @@ import logoDoti from "../assets/logoDoti.png"
 import logoDoti2 from "../assets/logoDoti2.png"
 import ItemMenu from "./ItemMenu"
 import Menu from "./Menu"
-import { UserOutlined } from '@ant-design/icons'
+import { LogoutOutlined, UserOutlined } from '@ant-design/icons'
 import useAuthStore from "../stores/auth"
+import { useNavigate } from "react-router-dom"
 
 const menuOpcoes = [
     {
@@ -23,22 +24,31 @@ const menuOpcoes = [
 
 export default function Header(props) {
 
+    const navigate = useNavigate()
+
     const usuario = useAuthStore((state) => state.usuario);
+    const clearAuth = useAuthStore((state) => state.clearAuth);
 
     const menu = menuOpcoes.map(n => (
         <ItemMenu ativo={props.underline == n.pagina ? true : false} nome={n.pagina} nav={n.navigate} key={n.pagina}></ItemMenu>
     ))
 
+    function handleLogout() {
+        clearAuth();
+        navigate("/login");
+    }
+
     return (<header>
         <StyledHeaderDesktop>
             <img src={logoDoti} alt="logoDoti" />
             {menu}
-            <a href="./../../">
             <StyledUser>
-            <UserOutlined />
-                <h2>Olá, {usuario.nome.slice(0, 10)}</h2>
+                <div onClick={() => navigate("/editar")}>
+                    <UserOutlined />
+                    <h2>Olá, {usuario.nome.slice(0, 10)}</h2>
+                </div>
+                <LogoutOutlined onClick={handleLogout}/>
             </StyledUser>
-            </a>
         </StyledHeaderDesktop>
         <StyledHeaderMobile>
         <img src={logoDoti2} alt="logoDoti" />
@@ -79,8 +89,16 @@ const StyledHeaderMobile = styled.div`
 const StyledUser = styled.div`
     font-size: 2rem;
     display: flex;
+    color: white;
+    div {
     gap: 20px;
     padding: 10px;
+    }
+    div:hover{
+    cursor: pointer;
+    opacity: .8;
+    transition: .8s;
+    }
     h2{
         font-size:1.8rem;
     }
