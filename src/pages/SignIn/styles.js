@@ -7,7 +7,7 @@ export const ContainerSignIn = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: 7% 0;
+    margin: 60px 0;
     @media(max-width: 912px) {
         flex-direction: column;
     }
@@ -33,6 +33,10 @@ export const LogoStyled = styled.div`
     @media(max-width: 912px) {
         width: 80%;
         margin-bottom: 30px;
+        h1{
+         font-size: 22px;           
+        }
+
     }
 `
 
