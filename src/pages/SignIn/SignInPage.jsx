@@ -13,12 +13,12 @@ export default function SignIn() {
 
     const [passwordVisible, setPasswordVisible] = useState(false);
     const [form, setForm] = useState({email: "", password: ""});
+
     const token = useAuthStore((state) => state.token);
     const usuario = useAuthStore((state) => state.usuario);
     const setToken = useAuthStore((state) => state.setToken);
-
-
     
+    console.log({ token, usuario })
 
     async function handleForm(e) {
         e.preventDefault();
@@ -29,10 +29,9 @@ export default function SignIn() {
         e.preventDefault();
         try {
             const res = await api.post("/login", form);
-            console.log(res.data.token)
-            const session = await api.post("sessoes", { headers: { Authorization: `bearer ${res.data.token}` } });
-            console.log(session.data);
-            navigate("/home")
+            const { token } = res.data;
+            setToken(token);
+            navigate("/home");
         } catch (err) {
             alert(err.response.data.message);
         }

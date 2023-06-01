@@ -4,15 +4,16 @@ import logoDoti2 from "../assets/logoDoti2.png"
 import ItemMenu from "./ItemMenu"
 import Menu from "./Menu"
 import { UserOutlined } from '@ant-design/icons'
+import useAuthStore from "../stores/auth"
 
 const menuOpcoes = [
     {
         pagina: "Home",
-        navigate: "Home"
+        navigate: "home"
     },
     {
         pagina: "Blog",
-        navigate: "Blog"    
+        navigate: "blog"    
     },
     {
         pagina: "Produtos",
@@ -22,6 +23,7 @@ const menuOpcoes = [
 
 export default function Header(props) {
 
+    const usuario = useAuthStore((state) => state.usuario);
 
     const menu = menuOpcoes.map(n => (
         <ItemMenu ativo={props.underline == n.pagina ? true : false} nome={n.pagina} nav={n.navigate} key={n.pagina}></ItemMenu>
@@ -34,7 +36,7 @@ export default function Header(props) {
             <a href="./../../">
             <StyledUser>
             <UserOutlined />
-                <h2>Olá, Usuário</h2>
+                <h2>Olá, {usuario.nome.slice(0, 10)}</h2>
             </StyledUser>
             </a>
         </StyledHeaderDesktop>

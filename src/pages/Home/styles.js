@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 
 export const StyledHome = styled.div`
-
     width: 90%;
     margin: auto;
     background-color: black;
