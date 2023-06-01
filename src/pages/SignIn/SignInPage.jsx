@@ -1,9 +1,10 @@
 import { EyeInvisibleOutlined, 
 EyeOutlined, LockOutlined, MailOutlined} from "@ant-design/icons";
 import { useState } from "react";
-import { FormStyled, InputStyled,InputPassword, SignInStyled, LogoStyled, LogoStyleResponsive } from "./styles"
-import logoDoti from "../../assets/logoDoti.png"
+import { FormStyled, InputStyled,InputPassword, SignInStyled, LogoStyled, ContainerSignIn } from "./styles"
+import logoDoti from "../../assets/logoDoti2.png"
 import { useNavigate } from "react-router-dom";
+import api from "../../services/api";
 import useAuthStore from "../../stores/auth";
 
 export default function SignIn() {
@@ -19,53 +20,57 @@ export default function SignIn() {
 
     
 
-    function handleForm(e) {
+    async function handleForm(e) {
         e.preventDefault();
         setForm({...form, [e.target.name]: e.target.value});
     }
 
-    function submitForm(e) {
+    async function submitForm(e) {
         e.preventDefault();
+        try {
+            const res = await api.post("/login", form);
+            console.log(res.data.token)
+            const session = await api.post("sessoes", { headers: { Authorization: `bearer ${res.data.token}` } });
+            console.log(session.data);
+            navigate("/home")
+        } catch (err) {
+            alert(err.response.data.message);
+        }
     }
 
     return (
-    <>
-    <LogoStyled>
-        <img src={logoDoti} alt="logoDoti" />  
-        <h1>Bem vindo ao Doti! Faça seu login na plataforma</h1>
-    </LogoStyled>
-    
-    <LogoStyleResponsive>
-        <img src={logoDoti} alt="logoDoti" />  
-        <h1>Bem vindo ao Doti! Faça seu login na plataforma</h1>
-    </LogoStyleResponsive>
+    <ContainerSignIn>
+        <LogoStyled>
+            <img src={logoDoti} alt="logoDoti" />  
+            <h1>Bem vindo ao Doti! Faça seu login na plataforma</h1>
+        </LogoStyled>
 
-    <SignInStyled>
-        <FormStyled>
-            <InputStyled placeholder="E-mail" 
-            prefix={<MailOutlined className="icon"/>}
-            type="email"
-            name="email"
-            required
-            value={form.email}
-            onChange={handleForm}
-            />
-            <InputPassword placeholder="Senha" 
-            prefix={<LockOutlined className="icon"/>}
-            type="password"
-            name="password"
-            visibilityToggle={{ visible: passwordVisible, onVisibleChange: setPasswordVisible }}
-            iconRender={(visible) => 
-            (visible ? <EyeOutlined style={{color: "white"}}/> :
-             <EyeInvisibleOutlined style={{color: "white"}}/>)}
-             required
-             value={form.password}
-            onChange={handleForm}
-            />
-            <button type="submit" onClick={submitForm}>CADASTRAR</button>
-        </FormStyled>
-        <h2>Não tem uma conta? <a onClick={() => navigate("/")}>Registre-se</a></h2>
-    </SignInStyled>
-    </>
+        <SignInStyled>
+            <FormStyled>
+                <InputStyled placeholder="E-mail" 
+                prefix={<MailOutlined className="icon"/>}
+                type="email"
+                name="email"
+                required
+                value={form.email}
+                onChange={handleForm}
+                />
+                <InputPassword placeholder="Senha" 
+                prefix={<LockOutlined className="icon"/>}
+                type="password"
+                name="senha"
+                visibilityToggle={{ visible: passwordVisible, onVisibleChange: setPasswordVisible }}
+                iconRender={(visible) => 
+                (visible ? <EyeOutlined style={{color: "white"}}/> :
+                <EyeInvisibleOutlined style={{color: "white"}}/>)}
+                required
+                value={form.senha}
+                onChange={handleForm}
+                />
+                <button type="submit" onClick={submitForm}>CADASTRAR</button>
+            </FormStyled>
+            <h2>Não tem uma conta? <a onClick={() => navigate("/")}>Registre-se</a></h2>
+        </SignInStyled>
+    </ContainerSignIn>
     )
 }
