@@ -45,32 +45,35 @@ export default function SignIn() {
             <h1>Bem vindo ao Doti! Faça seu login na plataforma</h1>
         </LogoStyled>
 
-        <SignInStyled>
-            <FormStyled>
-                <InputStyled placeholder="E-mail" 
-                prefix={<MailOutlined className="icon"/>}
-                type="email"
-                name="email"
-                required
-                value={form.email}
-                onChange={handleForm}
-                />
-                <InputPassword placeholder="Senha" 
-                prefix={<LockOutlined className="icon"/>}
-                type="password"
-                name="senha"
-                visibilityToggle={{ visible: passwordVisible, onVisibleChange: setPasswordVisible }}
-                iconRender={(visible) => 
-                (visible ? <EyeOutlined style={{color: "white"}}/> :
-                <EyeInvisibleOutlined style={{color: "white"}}/>)}
-                required
-                value={form.senha}
-                onChange={handleForm}
-                />
-                <button type="submit" onClick={submitForm}>CADASTRAR</button>
-            </FormStyled>
-            <h2>Não tem uma conta? <a onClick={() => navigate("/")}>Registre-se</a></h2>
-        </SignInStyled>
-    </ContainerSignIn>
+
+    <SignInStyled>
+        <FormStyled>
+            <InputStyled placeholder="E-mail" 
+            prefix={<MailOutlined className="icon"/>}
+            type="email"
+            name="email"
+            required
+            value={form.email}
+            onChange={handleForm}
+            />
+            <InputPassword placeholder="Senha" 
+            prefix={<LockOutlined className="icon"/>}
+            type="password"
+            name="password"
+            visibilityToggle={{ visible: passwordVisible, onVisibleChange: setPasswordVisible }}
+            iconRender={(visible) => 
+            (visible ? <EyeOutlined style={{color: "white"}}/> :
+             <EyeInvisibleOutlined style={{color: "white"}}/>)}
+             required
+             value={form.password}
+            onChange={handleForm}
+            />
+            <button type="submit" onClick={submitForm}>ENTRAR</button>
+        </FormStyled>
+        <h2>Não tem uma conta? <a onClick={() => navigate("/")}>Registre-se</a></h2>
+    </SignInStyled>
+    </>
+
+
     )
 }
