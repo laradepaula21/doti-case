@@ -104,12 +104,6 @@ export default function Home() {
                     </div>
                 </StyledLoggedNow>
             </div>
-                <StyledDivReclamacoes>
-                    <p> Tem alguma reclamação? <StyledLinkReclamacoes href="https://docs.google.com/forms/d/1QtK3XIWlPJ5YYyzsmC9T9gpjdOUGVOW5qwE1Dx8dFmI/edit"  target="_blank"> 
-                         Clique aqui! 
-                    </StyledLinkReclamacoes>
-                    </p>
-                </StyledDivReclamacoes>
             </StyledHome>
             <Footer></Footer>
         </>
