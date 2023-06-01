@@ -58,6 +58,7 @@ const StyledHomeCarousel = styled.div`
   height: auto;
   position: relative;
   margin: auto;
+  padding-top: 5px;
   img{
     width: 100%
   }

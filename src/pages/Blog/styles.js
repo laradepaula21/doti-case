@@ -11,6 +11,9 @@ export const StyledBlog = styled.div`
     color: white;
     font-family: 'Poppins', sans-serif;
     width:100%;
+    @media screen and (min-width: 840px) {
+        margin-top: 80px;
+    }
     @media(max-width: 600px) {
     
     gap: 10px;
