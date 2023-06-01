@@ -1,7 +1,7 @@
 import React from "react";
-import {StyledHomeLogin, StyledInputBotao,StyledInput,StyledBotaoLogin } from "./styles"
+import {StyledHomeLogin, StyledInputBotao,StyledBotaoLogin } from "./styles"
 
-export default function HomeLogin({searchMembers}) {
+export default function HomeLogin({searchMembers, setMembers}) {
   return (
     <StyledHomeLogin>
             <input type="text" placeholder="Pesquisar membros" onChange={searchMembers}/>

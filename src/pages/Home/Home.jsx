@@ -4,8 +4,65 @@ import LoggedUsers from "./Logged"
 import HomeCarousel from "../../components/HomeCarousel"
 import {StyledHome, StyledDivLogin, StyledLoggedNow, StyledDivTitulos, StyledMembrosTitulo, StyledOutrosTitulos, StyledModalidadeTitulo,StyledHorarioTitulo, StyledTempoTitulo, StyledDivReclamacoes, StyledLinkReclamacoes} from "./styles"
 import HomeLogin from "./HomeLogin";
+import perfil from "../../assets/perfil.png"
+import { useState } from "react";
+
+const users = [
+    {
+        nome: `Bernardo`,
+        frase: `frase`,
+        imagem: perfil,
+        modalidade: `Modalidade`,
+        horario: `00:00`,
+        tempo: `00:00`,
+    },
+
+    {
+        nome: `Jefferson`,
+        frase: ``,
+        imagem: perfil,
+        modalidade: `Modalidade`,
+        horario: `00:00`,
+        tempo: `00:00`,
+    },
+
+    {
+        nome: `Vitoria`,
+        frase: `frase`,
+        imagem: perfil,
+        modalidade: `Modalidade`,
+        horario: `00:00`,
+        tempo: `00:00`,
+    },
+
+    {
+        nome: `Lara`,
+        frase: ``,
+        imagem: perfil,
+        modalidade: `Modalidade`,
+        horario: `00:00`,
+        tempo: `00:00`,
+    }
+
+]
 
 export default function Home() {
+
+    const [members, setMembers] = useState(users);
+
+    function searchMembers(e) {
+        e.preventDefault();
+        console.log(e.target.value)
+        let findMembers = []
+        setMembers(findMembers);
+        users.find(user => {
+            if (e.target.value === "") return setMembers(users)
+            if (user.nome.toLowerCase().startsWith(e.target.value.toLowerCase())) {
+                findMembers = [...findMembers, user]
+                setMembers(findMembers);
+            }
+        })
+    }
 
     return (
 
@@ -15,7 +72,7 @@ export default function Home() {
             <HomeCarousel />
             <div>
                 <StyledDivLogin>
-                    <HomeLogin></HomeLogin>
+                    <HomeLogin searchMembers={searchMembers} setMembers={setMembers}></HomeLogin>
                 </StyledDivLogin>
                 <StyledLoggedNow>
                     <StyledDivTitulos>
@@ -28,7 +85,7 @@ export default function Home() {
                         </StyledOutrosTitulos>
                     </StyledDivTitulos>
                     <div>
-                        <LoggedUsers></LoggedUsers>
+                        <LoggedUsers members={members}></LoggedUsers>
                     </div>
                 </StyledLoggedNow>
             </div>
