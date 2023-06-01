@@ -57,7 +57,7 @@ export default function SignIn() {
              value={form.password}
             onChange={handleForm}
             />
-            <button type="submit" onClick={submitForm}>CADASTRAR</button>
+            <button type="submit" onClick={submitForm}>ENTRAR</button>
         </FormStyled>
         <h2>Não tem uma conta? <a onClick={() => navigate("/")}>Registre-se</a></h2>
     </SignInStyled>
