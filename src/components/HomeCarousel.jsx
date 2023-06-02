@@ -2,9 +2,10 @@ import styled from "styled-components";
 import { Carousel } from 'antd';
 import { CaretLeftOutlined , CaretRightOutlined } from '@ant-design/icons'
 import { useRef } from 'react';
-import car2 from "./../assets/car2.png"
 import car3 from "./../assets/car3.png"
 import car4 from "./../assets/car4.jpg"
+import reclamacoes from "./../assets/reclamacoes.png"
+
 
 const HomeCarousel = () => {
 
@@ -38,13 +39,15 @@ const HomeCarousel = () => {
     <CaretLeftOutlined style={leftArrowStyle} onClick={()=>arrowRef.current.prev()}/> 
     <Carousel autoplay dots={false} ref={arrowRef}>
       <div>
-        <img src={car2}></img>
+        <img src={car3} alt="Imagem carrocel"></img>
       </div>
       <div>
-        <img src={car3}></img>
+        <img src={car4}  alt="Imagem carrocel"></img>
       </div>
       <div>
-        <img src={car4}></img>
+        <a href="https://docs.google.com/forms/d/1QtK3XIWlPJ5YYyzsmC9T9gpjdOUGVOW5qwE1Dx8dFmI/edit" target="blank">
+        <img src={reclamacoes} alt="Reclamações"></img>
+        </a>
       </div>
     </Carousel>
     <CaretRightOutlined style={rightArrowStyle} onClick={()=>arrowRef.current.next()}/>
