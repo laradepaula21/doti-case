@@ -8,10 +8,20 @@ import api from "../../services/api";
 export default function LoggedUser( {name, description, time, id, getSessions}) {
 
     const [hours, setHours] = useState();
+    const [hourArrival, setHourArrival] = useState();
     const [minutes, setMinutes] = useState();
 
     useEffect(() => {
         function getHours() {
+            
+            const [hora, minuto] = new Date(time).toLocaleTimeString("pt-BR", {
+                timeStyle: "short",       //Serão retornado apenas horas e minutos.  
+                hour12: false,            //Formato de 24h, suprimindo sufixos AM e PM.
+                numberingSystem: "latn"   //Resulado em algarismos indo-arábicos.
+            }).split(":")
+
+            setHourArrival(`${hora}:${minuto}`)
+            
             const timeBrazil = dayjs(time);
             const timeNow = dayjs(Date.now());
             let hourSpent = timeNow.diff(timeBrazil, 'hour', true);
@@ -62,7 +72,7 @@ export default function LoggedUser( {name, description, time, id, getSessions}) 
                 <StyledLoggedInfo>Remoto</StyledLoggedInfo>
             </StyledModalidade>
             <StyledHorario> 
-                <StyledLoggedInfo>{time.slice(11, 16)}</StyledLoggedInfo> 
+                <StyledLoggedInfo>{hourArrival}</StyledLoggedInfo> 
             </StyledHorario>
             <StyledTempo>  
                 <StyledLoggedInfo>{hours}:{minutes}</StyledLoggedInfo> 

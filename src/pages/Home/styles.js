@@ -343,4 +343,5 @@ export const StyledLoggedInfo = styled.div`
 
 export const StyledSelect = styled(Select)`
         width: 100%;
+
 `
