@@ -58,6 +58,13 @@ const StyledHomeCarousel = styled.div`
   height: auto;
   position: relative;
   margin: auto;
+  padding-top: 5px;
+  
+  @media screen and (min-width: 626px){
+    border-radius: 20px;
+    overflow:hidden;
+
+  }
   img{
     width: 100%
   }

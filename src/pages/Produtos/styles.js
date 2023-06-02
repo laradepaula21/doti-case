@@ -12,6 +12,9 @@ export const StyledPaginaProdutos = styled.div`
         width: 100%; 
         text-align: center;
     }
+    @media screen and (min-width: 840px) {
+        margin-top: 80px;
+    }
 `
 export const StyledEsquerda = styled.div`
     font-family: 'Poppins', sans-serif;
