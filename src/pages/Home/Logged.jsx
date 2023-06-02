@@ -2,7 +2,7 @@ import {StyledLoggedUsers, StyledUserProfile,} from "./styles"
 import LoggedUser from "./LoggedUser";
 
 
-export default function LoggedUsers( { sessions }) {
+export default function LoggedUsers( { sessions, getSessions }) {
 
     
 
@@ -14,6 +14,8 @@ export default function LoggedUsers( { sessions }) {
                     <LoggedUser name={user.id_usuario.nome} 
                     description={user.id_usuario.descricao}
                     time={user.createdAt}
+                    id={user.id_usuario._id}
+                    getSessions={getSessions}
                     ></LoggedUser>
                 </StyledUserProfile>
             )}

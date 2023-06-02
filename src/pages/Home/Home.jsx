@@ -11,11 +11,13 @@ import api from "../../services/api";
 export default function Home() {
 
     const [sessions, setSessions] = useState([])
+    const [allSessions, setAllSessions] = useState([])
 
     async function getSessions() {
         try {
             const res = await api.get("/sessoes");
             setSessions(res.data);
+            setAllSessions(res.data);
         } catch (err) {
             console.log(err);
         }
@@ -30,7 +32,7 @@ export default function Home() {
         e.preventDefault();
         let findSessions = []
         setSessions(findSessions);
-        sessions.find(user => {
+        allSessions.find(user => {
             if (e.target.value === "") return getSessions();
             if (user.id_usuario.nome.toLowerCase().startsWith(e.target.value.toLowerCase())) {
                 findSessions = [...findSessions, user]
@@ -47,7 +49,7 @@ export default function Home() {
             <HomeCarousel />
             <div>
                 <StyledDivLogin>
-                    <HomeLogin searchSessions={searchSessions}></HomeLogin>
+                    <HomeLogin searchSessions={searchSessions} getSessions={getSessions}></HomeLogin>
                 </StyledDivLogin>
                 <StyledLoggedNow>
                     <StyledDivTitulos>
@@ -60,7 +62,7 @@ export default function Home() {
                         </StyledOutrosTitulos>
                     </StyledDivTitulos>
                     <div>
-                        <LoggedUsers sessions={sessions}></LoggedUsers>
+                        <LoggedUsers sessions={sessions} getSessions={getSessions}></LoggedUsers>
                     </div>
                 </StyledLoggedNow>
             </div>

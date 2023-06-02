@@ -3,8 +3,9 @@ import { LogoutOutlined } from "@ant-design/icons";
 import perfil from "../../assets/perfil.png"
 import { StyledFrase, StyledHorario, StyledLoggedInfo, StyledLogout, StyledMembros, StyledModalidade, StyledNome, StyledOutros, StyledTempo } from "./styles"
 import dayjs from "dayjs";
+import api from "../../services/api";
 
-export default function LoggedUser( {name, description, time }) {
+export default function LoggedUser( {name, description, time, id, getSessions}) {
 
     const [hours, setHours] = useState();
     const [minutes, setMinutes] = useState();
@@ -35,6 +36,16 @@ export default function LoggedUser( {name, description, time }) {
         return () => clearInterval(interval);
     }, [])
 
+    async function logoutSession(id) {
+        try {
+            const res = await api.delete(`/sessoes/${id}`)
+            getSessions();
+            console.log(res.data)
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
     return (
         <>
         <StyledMembros>
@@ -56,7 +67,7 @@ export default function LoggedUser( {name, description, time }) {
             <StyledTempo>  
                 <StyledLoggedInfo>{hours}:{minutes}</StyledLoggedInfo> 
             </StyledTempo>
-            <StyledLogout onClick={()=> console.log(`Deslogado`)}> <LogoutOutlined/> </StyledLogout>
+            <StyledLogout onClick={()=> logoutSession(id)}> <LogoutOutlined/> </StyledLogout>
         </StyledOutros>
         </>
     )
