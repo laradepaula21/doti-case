@@ -6,6 +6,7 @@ import Menu from "./Menu"
 import { LogoutOutlined, UserOutlined } from '@ant-design/icons'
 import useAuthStore from "../stores/auth"
 import { useNavigate } from "react-router-dom"
+import { useEffect } from "react"
 
 const menuOpcoes = [
     {
