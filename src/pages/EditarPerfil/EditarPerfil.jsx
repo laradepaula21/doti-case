@@ -1,23 +1,41 @@
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
+import api from "../../services/api";
 import {EditStyled, FormStyled, InputStyled } from "./styles"
 import {CompassOutlined, UserOutlined ,EditOutlined} from "@ant-design/icons";
 import { useState } from "react";
+import useAuthStore from "../../stores/auth";
+import { useNavigate } from "react-router";
 
 export default function EditarPerfil() {
 
+    const navigate = useNavigate();
 
-    const [form, setForm] = useState({name: "", email: "", adress: "", aboutyou: ""})
+    const usuario = useAuthStore((state) => state.usuario);
+    const setToken = useAuthStore((state) => state.setToken);
+
+    const [form, setForm] = useState({nome: "", email: "", endereco: "", descricao: ""})
 
     function handleForm(e) {
         e.preventDefault();
         setForm({...form, [e.target.name]: e.target.value}); 
     }
 
-    function submitForm(e) {
+    async function submitForm(e) {
         e.preventDefault();
+        try {
+            form.email = usuario.email;
+            const res = await api.put(`/usuarios/${usuario._id}`, form);
+            const { token } = res.data;
+            console.log(token)
+            setToken(token);
+            navigate("/home");
+        } catch (err) {
+            console.log(err)
+            // alert(err.response.data.message);
+        }
     }
-
+    
     return (
     <>
     <Header underline=""></Header>
@@ -27,25 +45,25 @@ export default function EditarPerfil() {
             <InputStyled placeholder="Nome" 
             prefix={<UserOutlined className="icon"/>}
             type="name"
-            name="name"
+            name="nome"
             required
-            value={form.name}
+            value={form.nome}
             onChange={handleForm}
             />
             <InputStyled placeholder="Endereço" 
             prefix={<CompassOutlined className="icon"/>}
             type="text"
-            name="adress"
+            name="endereco"
             required
-            value={form.adress}
+            value={form.endereco}
             onChange={handleForm}
             />
             <InputStyled placeholder="Sobre você" 
             prefix={<EditOutlined className="icon"/>}
             type="text"
-            name="aboutyou"
+            name="descricao"
             required
-            value={form.aboutyou}
+            value={form.descricao}
             onChange={handleForm}
             />
             <button type="submit" onClick={submitForm}>SALVAR</button>

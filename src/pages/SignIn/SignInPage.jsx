@@ -14,11 +14,8 @@ export default function SignIn() {
     const [passwordVisible, setPasswordVisible] = useState(false);
     const [form, setForm] = useState({email: "", senha: ""});
 
-    const token = useAuthStore((state) => state.token);
-    const usuario = useAuthStore((state) => state.usuario);
     const setToken = useAuthStore((state) => state.setToken);
-    
-    console.log({ token, usuario })
+
 
     async function handleForm(e) {
         e.preventDefault();
