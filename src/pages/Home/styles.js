@@ -1,3 +1,4 @@
+import { Select } from "antd";
 import styled from "styled-components";
 
 
@@ -169,29 +170,28 @@ export const StyledInputBotao = styled.div`
     justify-content: flex-end;
 
   @media screen and (max-width: 650px) {
-
     width: 90%;
-
-  } 
+  }
+  .ant-select-selection {
+  visibility: hidden;
+    }
 
   input {
-    width: 100%;
-    border: 1px solid #1a1a1d;
-    border-radius: 2px;
-    outline: none;
-    background-color: #1a1a1d;
-    color: white;
-    padding-inline-start: 10px;
-    font-size: 14px;
-  &:focus-within {
-    border-color: #633bbc;
-
-}
-@media screen and (max-width: 280px){
-font-size: 12px;
-}
-}
-
+        width: 100%;
+        border: 1px solid #1a1a1d;
+        border-radius: 2px;
+        outline: none;
+        background-color: #ffffff;;
+        color: rgba(0, 0, 0, 0.88);
+        padding-inline-start: 10px;
+        font-size: 14px;
+        &:focus-within {
+            border-color: #633bbc;
+        }
+        @media screen and (max-width: 280px){
+        font-size: 12px;
+        }
+    }
 `
 export const StyledBotaoLogin = styled.button`
 
@@ -337,4 +337,8 @@ export const StyledLoggedInfo = styled.div`
     font-size: 14px;
     border-radius: 2px;
   
+`
+
+export const StyledSelect = styled(Select)`
+        width: 100%;
 `

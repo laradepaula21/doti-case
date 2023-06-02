@@ -1,14 +1,17 @@
 import React from "react";
 import {StyledHomeLogin, StyledInputBotao,StyledBotaoLogin } from "./styles"
+import HomeSelect from "./HomeSelect";
+import { Input } from "antd";
 
-export default function HomeLogin({searchMembers, setMembers}) {
+export default function HomeLogin({searchSessions}) {
+
   return (
     <StyledHomeLogin>
       <StyledInputBotao>
-            <input type="text" placeholder="Pesquisar membros" onChange={searchMembers}/>
+            <Input type="text" placeholder="Pesquisar membros" onChange={searchSessions}/>
         </StyledInputBotao>
         <StyledInputBotao>
-            <input type="text" placeholder="Digite o nome do membro" />
+          <HomeSelect></HomeSelect>
         <StyledBotaoLogin>Login</StyledBotaoLogin>
         </StyledInputBotao>
     </StyledHomeLogin>

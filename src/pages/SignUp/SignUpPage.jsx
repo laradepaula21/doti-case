@@ -1,5 +1,3 @@
-import Footer from "../../components/Footer";
-import Header from "../../components/Header";
 import {  CompassOutlined, EyeInvisibleOutlined, 
 EyeOutlined, LockOutlined, MailOutlined, UserOutlined, EditOutlined } from "@ant-design/icons";
 import { useState } from "react";

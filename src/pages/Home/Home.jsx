@@ -2,79 +2,39 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import LoggedUsers from "./Logged"
 import HomeCarousel from "../../components/HomeCarousel"
-import {StyledHome, StyledDivLogin, StyledLoggedNow, StyledDivTitulos, StyledMembrosTitulo, StyledOutrosTitulos, StyledModalidadeTitulo,StyledHorarioTitulo, StyledTempoTitulo, StyledDivReclamacoes, StyledLinkReclamacoes} from "./styles"
+import {StyledHome, StyledDivLogin, StyledLoggedNow, StyledDivTitulos, StyledMembrosTitulo, StyledOutrosTitulos, StyledModalidadeTitulo,StyledHorarioTitulo, StyledTempoTitulo} from "./styles"
 import HomeLogin from "./HomeLogin";
 import perfil from "../../assets/perfil.png"
 import { useEffect, useState } from "react";
 import api from "../../services/api";
 
-const users = [
-    {
-        nome: `Bernardo`,
-        frase: `frase`,
-        imagem: perfil,
-        modalidade: `Modalidade`,
-        horario: `00:00`,
-        tempo: `00:00`,
-    },
-
-    {
-        nome: `Jefferson`,
-        frase: ``,
-        imagem: perfil,
-        modalidade: `Modalidade`,
-        horario: `00:00`,
-        tempo: `00:00`,
-    },
-
-    {
-        nome: `Vitoria`,
-        frase: `frase`,
-        imagem: perfil,
-        modalidade: `Modalidade`,
-        horario: `00:00`,
-        tempo: `00:00`,
-    },
-
-    {
-        nome: `Lara`,
-        frase: ``,
-        imagem: perfil,
-        modalidade: `Modalidade`,
-        horario: `00:00`,
-        tempo: `00:00`,
-    }
-
-]
-
 export default function Home() {
 
-    useEffect(() => {
-        async function getSessions() {
-            try {
-                const res = await api.get("/sessoes");
-                console.log(res.data);
-            } catch (err) {
-                console.log(err);
-            }
+    const [sessions, setSessions] = useState([])
+
+    async function getSessions() {
+        try {
+            const res = await api.get("/sessoes");
+            setSessions(res.data);
+        } catch (err) {
+            console.log(err);
         }
+    }
+
+    useEffect(() => {
         getSessions();
-        setInterval(getSessions, 10000);
     }, []);
 
-    const [members, setMembers] = useState(users);
 
-
-    function searchMembers(e) {
+    function searchSessions(e) {
         e.preventDefault();
-        console.log(e.target.value)
-        let findMembers = []
-        setMembers(findMembers);
-        users.find(user => {
-            if (e.target.value === "") return setMembers(users)
-            if (user.nome.toLowerCase().startsWith(e.target.value.toLowerCase())) {
-                findMembers = [...findMembers, user]
-                setMembers(findMembers);
+        let findSessions = []
+        setSessions(findSessions);
+        sessions.find(user => {
+            if (e.target.value === "") return getSessions();
+            if (user.id_usuario.nome.toLowerCase().startsWith(e.target.value.toLowerCase())) {
+                findSessions = [...findSessions, user]
+                setSessions(findSessions);
             }
         })
     }
@@ -87,7 +47,7 @@ export default function Home() {
             <HomeCarousel />
             <div>
                 <StyledDivLogin>
-                    <HomeLogin searchMembers={searchMembers} setMembers={setMembers}></HomeLogin>
+                    <HomeLogin searchSessions={searchSessions}></HomeLogin>
                 </StyledDivLogin>
                 <StyledLoggedNow>
                     <StyledDivTitulos>
@@ -100,7 +60,7 @@ export default function Home() {
                         </StyledOutrosTitulos>
                     </StyledDivTitulos>
                     <div>
-                        <LoggedUsers members={members}></LoggedUsers>
+                        <LoggedUsers sessions={sessions}></LoggedUsers>
                     </div>
                 </StyledLoggedNow>
             </div>
