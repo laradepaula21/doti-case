@@ -10,7 +10,7 @@ export const StyledHome = styled.div`
     font-family: 'Poppins', sans-serif;
     
     @media screen and (min-width: 840px) {
-        margin-top: 80px;
+        margin-top: 90px;
     }
     @media screen and (max-width: 650px) {
 
@@ -165,11 +165,11 @@ export const StyledHomeLogin = styled.div`
 `;
 export const StyledInputBotao = styled.div`
 
-    max-width: 360px;
+    width: 260px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-
+    
   @media screen and (max-width: 650px) {
 
     width: 90%;

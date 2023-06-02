@@ -1,6 +1,4 @@
 import styled from "styled-components"
-import Blog_banner from '../../assets/Blog_banner.png'
-
 
 export const StyledBlog = styled.div`
     display: flex;
@@ -51,16 +49,18 @@ export const StyledNewsLetter = styled.div`
             min-width: 250px;
             border-radius: 10px;
             padding: 10px;
-            font-size: 16px; 
+            font-size: 15px; 
             cursor: pointer;
             color: #333333;
         }
     }
 
-    @media(max-width: 600px) {
+    @media(max-width: 839px) {
+        height: 30vh;
+        
         div {
         width: 100vw;
-        height: auto;
+        height: 30vh;
         min-height: 135;
         font-size: 10pt;
         display: flex;
@@ -93,7 +93,6 @@ export const StyledNoticias = styled.div`
     justify-content: center;
 
     @media(max-width: 600px) {
-    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -136,8 +135,7 @@ export const StyledPost = styled.div`
     }
 
     @media(max-width: 600px) {    
-    width: 100%;
-    height: 200px;
+    height: 160px;
     color: white;
     overflow: hidden;
     display: flex;
@@ -145,7 +143,7 @@ export const StyledPost = styled.div`
     justify-content: space-between;
     border-radius: 10px;
     padding: 5px  5px;
-    font-size: 12pt;
+    font-size: 0.8rem;
 
     div{
         height: 50%;
@@ -154,10 +152,10 @@ export const StyledPost = styled.div`
         justify-content: space-around;
     }
     h1 {
-        font-size: 35px;
+        font-size: 1.5rem;
     }
     .data{
-        font-size: 12px;
+        font-size: 0.6rem;
     }
     }
 `
