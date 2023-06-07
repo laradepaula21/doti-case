@@ -49,7 +49,7 @@ export default function HomeLogin({searchSessions, getSessions}) {
   return (
     <StyledHomeLogin>
       <StyledInputBotao>
-            <Input type="text" placeholder="Pesquisar membros" onChange={searchSessions}/>
+            <input type="text" placeholder="Pesquisar membros" onChange={searchSessions}/>
         </StyledInputBotao>
         <StyledInputBotao>
           <StyledSelect
