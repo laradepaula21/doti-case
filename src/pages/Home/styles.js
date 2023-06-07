@@ -174,19 +174,17 @@ export const StyledInputBotao = styled.div`
   @media screen and (max-width: 650px) {
     width: 90%;
   }
-  .ant-select-selection {
-  visibility: hidden;
-    }
 
   input {
         width: 100%;
         border: 1px solid #1a1a1d;
-        border-radius: 2px;
+        border-radius: 4px;
         outline: none;
-        background-color: #ffffff;;
-        color: rgba(0, 0, 0, 0.88);
+        background-color: rgba(32, 32, 36, 0.65);
+        color: white;
         padding-inline-start: 10px;
         font-size: 14px;
+        font-weight: 400;
         &:focus-within {
             border-color: #633bbc;
         }
@@ -205,7 +203,7 @@ export const StyledBotaoLogin = styled.button`
     text-align: center;
     color: white;
     font-size: 14px;
-    border-radius: 2px;
+    border-radius: 4px;
     border: none;
     background-color: #633bbc;
     transition: background-color 0.3s ease;
@@ -342,6 +340,19 @@ export const StyledLoggedInfo = styled.div`
 `
 
 export const StyledSelect = styled(Select)`
-        width: 100%;
-
+    width: 100%;
+    font-size: 14px !important;
+    div {
+        border-radius: 4px !important;
+        background-color: rgba(32, 32, 36, 0.65) !important;
+        border: 1px solid #1a1a1d !important;
+    }
+    span {
+        font-family: 'Poppins', sans-serif !important;
+        color: rgba(255, 255, 255, 0.5) !important;
+        font-weight: 300 !important;
+    }
+    input {
+        color: white !important;
+    }
 `
