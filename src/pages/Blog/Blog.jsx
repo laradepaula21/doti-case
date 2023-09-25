@@ -7,6 +7,10 @@ import Blog_noticia2 from '../../assets/Blog_noticia2.png'
 import Blog_noticia3 from '../../assets/Blog_noticia3.png'
 import Blog_noticia4 from '../../assets/Blog_noticia4.png'
 import Blog_noticia5 from '../../assets/Blog_noticia5.png'
+import Blog_noticia6 from '../../assets/Blog_noticia6.png'
+import Blog_noticia7 from '../../assets/Blog_noticia7.png'
+import Blog_noticia8 from '../../assets/Blog_noticia8.png'
+import Blog_noticia9 from '../../assets/Blog_noticia9.png'
 
 
 
@@ -40,6 +44,30 @@ const dados = [
     titulo: "Comunidade",
     corpo: "Comunidade: Guia prático de como contribuir para o ecossistema de tecnologia",
     horario: "Há um ano • 4 min de leitura"
+},
+{
+    imageSource: Blog_noticia6,
+    titulo: "Python",
+    corpo: "Python: linguagem popular com berço na comédia inglesa",
+    horario: "Há um ano • 4 min de leitura"
+},
+{
+    imageSource: Blog_noticia7,
+    titulo: "Typescript",
+    corpo: "TypeScript: por trás do superset de JavaScript",
+    horario: "Há um ano • 8 min de leitura"
+},
+{
+    imageSource: Blog_noticia8,
+    titulo: "NPM",
+    corpo: "npm: pacotes, pacotes e pacotes",
+    horario: "Há um ano • 3 min de leitura"
+},
+{
+    imageSource: Blog_noticia9,
+    titulo: "Elixir",
+    corpo: "Elixir: por trás da linguagem de programação brasileira",
+    horario: "Há um ano • 7a1 min de leitura"
 }
 ]
 
@@ -49,7 +77,6 @@ export default function Blog() {
         <Post dados={n} key={dados.imageSource}></Post>
     ))
     
-    console.log(noticias)
     return (
     <>
         <Header underline="Blog"></Header>
@@ -58,7 +85,7 @@ export default function Blog() {
             <div>
                 <h1>Blog da Rocketseat</h1>
                 <p>Junte-se a milhares de devs e acelere na direção dos seus objetivos. Transforme sua carreira em uma jornada de evolução contínua através das melhores tecnologias.</p>
-                <button>Inscreva-se em nossa newsletter</button>
+                <button onClick={()=> window.location.href = "https://www.rocketseat.com.br/newsletter"}>Inscreva-se em nossa newsletter</button>
             </div>
         </StyledNewsLetter>
         <StyledNoticias>

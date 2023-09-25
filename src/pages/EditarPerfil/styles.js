@@ -9,7 +9,7 @@ export const EditStyled = styled.div`
     width: 552px;
     height: 500px;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 10%;
     background-color: rgba(32, 32, 36, 0.65);
     h1 {
         font-family: 'Poppins', sans-serif;

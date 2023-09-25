@@ -1,15 +1,18 @@
+import { Select } from "antd";
 import styled from "styled-components";
 
 
 
 export const StyledHome = styled.div`
-
     width: 90%;
     margin: auto;
     background-color: black;
     color: white;
     font-family: 'Poppins', sans-serif;
-   
+    
+    @media screen and (min-width: 840px) {
+        margin-top: 90px;
+    }
     @media screen and (max-width: 650px) {
 
     width: 100%;
@@ -149,30 +152,46 @@ export const StyledHomeLogin = styled.div`
   line-height: 30px;
   padding: 20px 0px;
 
-
   @media screen and (max-width: 650px) {
 
     width: 100%;
     gap: 10px;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: space-around;
     line-height: 30px;
+
   }
 `;
 export const StyledInputBotao = styled.div`
 
-    width: 280px;
+    width: 260px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-
+    
   @media screen and (max-width: 650px) {
+    width: 90%;
+  }
 
-  width: 90%;
-
-  } 
-
+  input {
+        width: 100%;
+        border: 1px solid #1a1a1d;
+        border-radius: 4px;
+        outline: none;
+        background-color: rgba(32, 32, 36, 0.65);
+        color: white;
+        padding-inline-start: 10px;
+        font-size: 14px;
+        font-weight: 400;
+        &:focus-within {
+            border-color: #633bbc;
+        }
+        @media screen and (max-width: 280px){
+        font-size: 12px;
+        }
+    }
 `
 export const StyledBotaoLogin = styled.button`
 
@@ -184,7 +203,7 @@ export const StyledBotaoLogin = styled.button`
     text-align: center;
     color: white;
     font-size: 14px;
-    border-radius: 2px;
+    border-radius: 4px;
     border: none;
     background-color: #633bbc;
     transition: background-color 0.3s ease;
@@ -196,75 +215,9 @@ export const StyledBotaoLogin = styled.button`
     color: #633bbc;
     }
 
-
+    
 `
-export const StyledInput = styled.div`
-  width: 100%;
-  border: 1px solid #1a1a1d;
-  border-radius: 2px;
-  display: flex;
-  align-items: center;
 
-
-  &:focus-within {
-    border-color: #633bbc;
-  }
-
-  input {
-    width: 100%;
-    outline: none;
-    background-color: #1a1a1d;
-    color: white;
-    padding-inline-start: 5%;
-    text-align: left;
-    border: none;
-    font-size: 14px;
-
-  @media screen and (max-width: 280px) {
-      
-    font-size: 12px;
-
-  } 
-
-  }
-
-
-`;
-export const StyledMembroInput = styled.div`
-
-  width: 280px;
-  border: 1px solid #1a1a1d;
-  border-radius: 2px;
-  display: flex;
-  align-items: center;
-
-  &:focus-within {
-    border-color: #633bbc;
-  }
-
-  input {
-    width: 100%;
-    outline: none;
-    background-color: #1a1a1d;
-    color: white;
-    padding-inline-start: 5%;
-    text-align: left;
-    font-size: 14px;
-
-  @media screen and (max-width: 280px) {
-      
-    font-size: 12px;
-
-  } 
-
-  }
-
-  @media screen and (max-width: 650px) {
-
-    width: 90%;
-
-}
-`;
 export const StyledLoggedUsers = styled.div`
 
     width: 100%;
@@ -307,8 +260,6 @@ export const StyledMembros = styled.div`
     }
 }
 
-
-
 `
 export const StyledNome = styled.div`
 
@@ -317,8 +268,6 @@ export const StyledNome = styled.div`
     flex-direction: column;
     font-weight: 400;
     padding: 0px 12px;
-
-
 `
 export const StyledFrase = styled.div`
 
@@ -388,4 +337,22 @@ export const StyledLoggedInfo = styled.div`
     font-size: 14px;
     border-radius: 2px;
   
+`
+
+export const StyledSelect = styled(Select)`
+    width: 100%;
+    font-size: 14px !important;
+    div {
+        border-radius: 4px !important;
+        background-color: rgba(32, 32, 36, 0.65) !important;
+        border: 1px solid #1a1a1d !important;
+    }
+    span {
+        font-family: 'Poppins', sans-serif !important;
+        color: rgba(255, 255, 255, 0.5) !important;
+        font-weight: 300 !important;
+    }
+    input {
+        color: white !important;
+    }
 `

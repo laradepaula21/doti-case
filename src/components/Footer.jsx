@@ -17,7 +17,7 @@ export default function Footer() {
        <div className="infoJs">
 
             <p>
-            Informações de licensa javaScript
+            Informações de licença javaScript
             </p>
        </div>
     </StyledFooter>

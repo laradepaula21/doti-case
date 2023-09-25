@@ -1,34 +1,60 @@
 import styled from "styled-components";
 import { Input } from 'antd';
 
+export const ContainerSignIn = styled.div`
+    height: 80%;
+    align-self: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 60px 0;
+    @media(max-width: 912px) {
+        flex-direction: column;
+    }
+`
 
-export const SignUpStyled = styled.div`
+export const LogoStyled = styled.div`
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img {
+        width: 240px;
+    }
+    h1 {
+        font-family: 'Poppins', sans-serif;;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 30px;
+        color: white;
+        text-align: center;
+    }
+    @media(max-width: 912px) {
+        width: 80%;
+        margin-bottom: 30px;
+        h1{
+         font-size: 22px;           
+        }
+
+    }
+`
+
+export const SignInStyled = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    width: 452px;
-    height: 570px;
-    position: absolute;
-    top: 0; bottom: 0;
-    left: 0; right: 0;
-    margin: auto;
+    width: 352px;
+    height: 320px;
     background-color: rgba(32, 32, 36, 0.65);
-    h1 {
-        font-family: 'Poppins', sans-serif;
-        font-weight: 600;
-        font-size: 26px;
-        color: #FFFFFF;
-        padding: 10px;
-    }
+    border-radius: 10px;
     h2 {
         font-family: 'Poppins', sans-serif;
         font-weight: 400;
         font-size: 13px;
         text-align: center;
         color: #FFFFFF;
-        margin-top: 2.5px;
-        margin-bottom: 2.5px
+        padding: 4%;
     }
     a {
         color: #8257E5;
@@ -38,23 +64,26 @@ export const SignUpStyled = styled.div`
         cursor: pointer;
         filter: brightness(120%)
     }
+    @media(max-width: 912px) {
+        width: 50vw;
+    }
     @media(max-width: 600px){
-        width: 80%;
-        height: 350px;
-        height: 650px;
+        width: 70vw;
+        height: 270px;
         h1{
             font-size:20px;
+        }
+        h2 {
+            font-size: 10px;
         }
     }
 `
 
 export const FormStyled = styled.form`
-    height: 450px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     input {
-        width: 318px;
+        width: 248px;
         height: 38px;
         background: rgba(32, 32, 36, 0.65);
         border-radius: 9px;
@@ -70,14 +99,15 @@ export const FormStyled = styled.form`
     }
     button {
         font-family: 'Poppins', sans-serif;
-        width: 318px;
-        height: 45px;
+        width: 248px;
+        height: 40px;
         background: #633BBC;
         border: none;
         font-weight: 600;
-        font-size: 22px;
+        font-size: 18px;
         color: #FFFFFF;
         border-radius: 9px;
+        margin-top: 30px;
         transition: all 0.3s ease-in-out;
         @media(max-width: 600px){
         width: 80%;
@@ -97,17 +127,18 @@ export const FormStyled = styled.form`
 `
 
 export const InputStyled = styled(Input)`
-    width: 318px;
+    width: 248px;
+    margin-top: 20%;
     height: 38px;
     background: rgba(32, 32, 36, 1);
     border-radius: 9px;
     border: none;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 14px;
     color: #DDDADA;
     ::placeholder {
         font-weight: 500;
-        font-size: 18px;
+        font-size: 14px;
         color: #DDDADA;
     }
     input {
@@ -131,17 +162,18 @@ export const InputStyled = styled(Input)`
 `
 
 export const InputPassword = styled(Input.Password)`
-    width: 318px;
+    width: 248px;
     height: 38px;
     background: rgba(32, 32, 36, 1);
     border-radius: 9px;
     border: none;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 14px;
     color: #DDDADA;
+    margin-top: 40px;
     ::placeholder {
         font-weight: 500;
-        font-size: 18px;
+        font-size: 14px;
         color: #DDDADA;
     }
     input {

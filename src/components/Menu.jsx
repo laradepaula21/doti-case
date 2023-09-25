@@ -2,10 +2,13 @@ import { AppstoreOutlined, UserOutlined } from '@ant-design/icons';
 import { Menu } from 'antd';
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom"
+import useAuthStore from '../stores/auth';
 
 // submenu keys of first level
 const rootSubmenuKeys = ['sub1', 'sub2', 'sub4'];
 const App = () => {
+
+const usuario = useAuthStore((state) => state.usuario);
     
 const navigate = useNavigate();
 
@@ -21,8 +24,8 @@ function getItem(label, key, nav = false,path , icon, children, type) {
 }
 const items = [
     getItem('', 'menu', false, "", <AppstoreOutlined />, [
-        getItem('Ola usuário!', '0', true, "", <UserOutlined />),
-        getItem('Home', '1', true, "home"),
+        getItem(`Ola ${usuario.nome.slice(0, 10)}`, '0', true, "", <UserOutlined />),
+        getItem('Home', '1', true, ""),
         getItem('Blog', '2', true, "blog"),
         getItem('Produtos', '3', true,"produtos"),
     ]),
