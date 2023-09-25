@@ -3,6 +3,9 @@ This Single-Page Application serves as a time clock management system with vario
 login, home, product, profile editing, and blog. Users can sign up, securely log in, track logged hours, 
 view timestamps, access product details and edit their profile.
 
+![image](https://github.com/marquezintop/doti-case/assets/121268625/c5a4e8b6-b07a-4ea1-9a83-847c5b297dff)
+
+
 ## About
 The website offers a interface for managing time clock operations, allowing users to efficiently track their working hours.
 
